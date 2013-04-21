@@ -125,4 +125,5 @@
 	url = git://github.com/benmills/vimux.git
 [submodule "vim/vim.symlink/bundle/vim-multiple-cursors"]
 	path = vim/vim.symlink/bundle/vim-multiple-cursors
-	url = git://github.com/terryma/vim-multiple-cursors.git
+  url = git://github.com/terryma/vim-multiple-cursors.git
+  ignore = dirty
