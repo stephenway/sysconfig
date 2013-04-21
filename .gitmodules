@@ -109,3 +109,6 @@
 [submodule "vim/vim.symlink/zoomwin"]
 	path = vim/vim.symlink/zoomwin
 	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "agency"]
+	path = agency
+	url = git://github.com/agencyrevolution/agency.git
