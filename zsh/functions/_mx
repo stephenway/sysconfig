@@ -1,0 +1,5 @@
+#compdef mx
+
+compadd `ls $DOTFILES/tmux/workspaces`
+compadd `tmux ls >/dev/null 2>&1 | cut -d ":" -f 1`
+

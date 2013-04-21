@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Usage: sway vanity
+# Summary: Check Twitter followers count
+# Help: Uses the t gem to check followers for a given Twitter user
+#
+#    sway vanity [username]
+
+set -e
+USERNAME=${1:-"stephencway"}
+echo $USERNAME $(t user $USERNAME | grep Followers | cut -d " " -f 5)

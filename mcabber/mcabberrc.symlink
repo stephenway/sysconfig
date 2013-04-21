@@ -1,0 +1,84 @@
+set jid = stephen@agencyrevolution.com
+set server = talk.google.com
+
+set port = 5223
+
+set ignore_self_presence = 1
+
+set ssl = 1
+set ssl_ignore_checks = 1
+
+# Proxy
+# mcabber can use a proxy if it supports the CONNECT method
+# The proxy_user/proxy_pass variables are optional.
+#set proxy_host = "proxy-hostname"
+#set proxy_port = 3128
+#set proxy_user = "username"
+#set proxy_pass = "password"
+
+set lang = es
+set spell_enable = 1
+set spell_lang = es_ES
+set spell_encoding = iso8859-1
+set spell_encoding = UTF-8
+
+set cmdhistory_lines = 250
+
+# You can set up a mask to filter buddies and display them according to
+# their status.  The mask should contain the shortcut letters of the
+# status you want to see ([o]nline, [f]ree_for_chat, [d]o_not_disturb,
+# [n]ot_available, [a]way, [_]offline).
+set roster_display_filter = ofdna
+
+set completion_ignore_case = 0
+
+set logging = 1
+set load_logs = 1
+set logging_dir = ~/.mcabber/histo/
+set logging_ignore_status = 1
+
+set statefile = ~/.mcabber/mcabber.state
+
+set max_history_blocks = 8
+
+set autoaway = 120
+set message_autoaway = Auto-away (idle)
+
+set escdelay = 50
+
+# dark solarized color theme
+# more infos: http://ethanschoonover.com/solarized
+
+set color_background   = 234 
+set color_general      = 244
+set color_info         = 240
+set color_msgin        = 166
+set color_msgout       = 64
+set color_msghl        = 136
+set color_bgstatus     = 235
+set color_status       = 166
+set color_roster       = 240
+set color_bgrostersel  = 235
+set color_rostersel    = 166
+set color_rosterselmsg = 136
+set color_rosternewmsg = 136
+
+# Aliases
+alias me = say /me
+alias online   = status online
+alias away     = status away
+alias dnd      = status dnd
+alias notavail = status notavail
+
+# Key bindings
+# Ctrl-q (17) bound to /roster unread_next
+bind 17 = roster unread_next
+# Ctrl-x (24) bound to /roster alternate
+bind 24 = roster alternate
+# F5 (269) bound to /roster toggle_offline  (centericq-like, IIRC)
+bind 269 = roster toggle_offline
+# F12 (276) bound to /roster toggle
+bind 276 = roster toggle
+# Ctrl-Up/Ctrl-Down bound to /buffer up/down  (like Ctrl-p/Ctrl-n)
+bind 521 = buffer up
+bind 514 = buffer down

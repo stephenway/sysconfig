@@ -1,0 +1,157 @@
+# Don't lose ENV
+set -ga update-environment ' ITERM_PROFILE TMUX_STATUS_LEFT'
+
+## keybindings
+unbind C-b
+unbind C-a
+unbind ,
+unbind .
+unbind n
+unbind p
+unbind [
+unbind '"'
+unbind l
+unbind &
+unbind "'"
+
+set-option -g prefix C-a # C-a for prefix just like screen
+
+bind-key C-a    last-window
+
+bind-key  +     resize-pane -Z
+bind-key  =     resize-pane -Z
+bind-key  |     split-window -h
+bind-key  \     split-window -h
+bind-key  -     split-window -v
+
+# windows and panes
+bind-key u      select-window -t :1
+bind-key W      split-window -h \; choose-window 'kill-pane ; join-pane -hs %%'
+bind-key x      kill-pane
+bind-key X      kill-window
+bind-key q      confirm-before kill-session
+bind-key Q      confirm-before kill-server
+bind-key ,      previous-window # <
+bind-key .      next-window     # >
+bind-key <      swap-window -t :-
+bind-key >      swap-window -t :+
+
+# Smart pane switching with awareness of vim splits
+bind -n C-k run-shell 'tmux-vim-select-pane -U'
+bind -n C-j run-shell 'tmux-vim-select-pane -D'
+bind -n C-h run-shell 'tmux-vim-select-pane -L'
+bind -n C-l run-shell 'tmux-vim-select-pane -R'
+bind -n "C-\\" run-shell 'tmux-vim-select-pane -l'
+
+bind-key n      command-prompt 'rename-window "%%"'
+bind-key N      command-prompt 'rename-session "%%"'
+bind-key Escape copy-mode -u
+bind-key Up     copy-mode -u
+bind-key r      source-file $HOME/.tmux.conf
+bind-key R      refresh-client
+bind-key a      send-key C-a
+# -r: can be repeated without pressing prefix#     again (500ms after last '-r' action or prefix)
+bind-key -r h   select-pane -t :.-
+bind-key -r l   select-pane -t :.+
+
+set -g history-limit 10000
+
+## messages
+set-option -g message-fg colour0
+set-option -g message-bg colour4
+set-option -g display-time 1500
+
+## set status bar
+set-option -g status-utf8 on
+set-option -g status-interval 1
+set-option -g status-fg colour10
+set-option -g status-bg default
+set-option -g status-left-fg default
+set-option -g status-left-bg default
+set-option -g status-right-bg default
+
+# "I' == current window index
+# 'H' == Hostname
+# 'F' == current window flag
+# 'P' == current pane index
+# 'S' == Session name
+# 'T' == current window title
+# 'W' == current window name
+# '#' == a literal "#"
+# Where appropriate, special character sequences may be prefixed with a
+# number to specify the maximum length, in this line "#10W'.
+set -g status-left ""
+set-option -g status-right '#[fg=yellow]#S#[fg=default] [#I:#P] /// #(battery -o tmux -m default -g default)#[fg=default]%a %d %b %H:%M'
+
+set-option -g status-right-length 100
+set-option -g status-left-length 120
+
+## highlight active window
+set-window-option -g window-status-current-fg colour4
+set-window-option -g window-status-current-attr bold
+set-window-option -g window-status-current-bg default
+set-window-option -g window-status-current-format '[ #I #W ]'
+
+## set window notifications
+set-option -g visual-activity on
+set-option -g visual-content on
+
+# Alerts broken with 1.6
+set-window-option -g window-status-bell-fg colour226
+set-window-option -g window-status-bell-bg colour23
+
+set-window-option -g monitor-activity off
+
+# this only works for paying attention to tmux internal rename attempts
+# you also need the new-to-tmux-1.6 allow-rename off below
+set-window-option -g automatic-rename off
+
+# don't let ZSH override the window title
+set-window-option -g allow-rename on
+
+# renumber windows
+set-option -g renumber-windows on
+
+## tmux window titling for X
+set-option -g set-titles on
+set-option -g set-titles-string '#S'
+
+set-window-option -g window-status-format ' #I #W '
+set-window-option -g window-status-attr dim
+
+# starts windows at 1 not 0
+set-option -g base-index 1
+
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
+# Toggle mouse on with ^F m
+bind m \
+  set -g mode-mouse on \;\
+  set -g mouse-resize-pane on \;\
+  set -g mouse-select-pane on \;\
+  set -g mouse-select-window on \;\
+  display 'Mouse: ON'
+
+# Toggle mouse off with ^F M
+bind M \
+  set -g mode-mouse off \;\
+  set -g mouse-resize-pane off \;\
+  set -g mouse-select-pane off \;\
+  set -g mouse-select-window off \;\
+  display 'Mouse: OFF'
+
+set-window-option -g mode-keys vi
+
+## pane border and colors
+set-option -g pane-active-border-fg colour4
+set-option -g pane-active-border-bg default
+
+
+## Copy/paste
+set-option -g default-command "tmux rename-window zsh; reattach-to-user-namespace -l zsh"
+
+## Set term
+set-option -g default-terminal "xterm"

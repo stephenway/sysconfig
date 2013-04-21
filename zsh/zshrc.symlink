@@ -1,0 +1,46 @@
+export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/opt/boxen/nvm/v0.8.8/bin
+
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
+
+# easier reference to second drive
+export MEDIA="/Volumes/Media\ HD"
+
+# your project folder that we can `c [tab]` to
+export PROJECTS=$MEDIA/code
+
+source /opt/boxen/env.sh
+
+# source every .zsh file in this rep
+for config_file ($ZSH/**/*.zsh) source $config_file
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# quote pasted URLs
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+# fun
+autoload -U tetris
+zle -N tetris
+bindkey ^T tetris
+
+# load every completion after autocomplete loads
+for config_file ($ZSH/**/completion.sh) source $config_file
+
+source `brew --prefix grc`/etc/grc.bashrc
+
+# source subs
+eval "$($DOTFILES/sway/bin/sway init -)"
+eval "$($DOTFILES/agency/bin/agency init -)"
+eval "$($HOME/.coral/libexec/coral init -)"

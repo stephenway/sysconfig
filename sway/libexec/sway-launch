@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Usage: sway launch
+# Summary: Launch extra apps
+# Help: Mostly used when I step in the office for email, messages, etc
+#
+#    sway launch [topic]
+
+set -e
+TOPIC=${1:-"work"}
+
+if [ $TOPIC="work" ]; then
+  for APP in "Messages" "Feeds" "Fantastical" "Frank DeLoupe" "MailTab Pro for Gmail" "Droplr"
+  do
+    open /Applications/$APP.app
+  done
+fi

@@ -1,0 +1,86 @@
+2013-01-28 09:13:58		Plugins loaded: alias, fifo, irc, logger, relay, rmodifier, script, tcl, xfer
+2013-01-28 09:15:17	=!=	irc: server "freenode" already exists, can't create it!
+2013-01-28 09:15:50		Option changed: irc.server.freenode.username = "sw"
+2013-01-28 09:16:23		Option changed: irc.server.freenode.realname = "Stephen Way"
+2013-01-28 09:16:42		Option changed: irc.server.freenode.autoconnect = on
+2013-01-28 09:21:29		[core]
+2013-01-28 09:21:29		  away    command help    layout  proxy   save    uptime 
+2013-01-28 09:21:29		  bar     cursor  history mouse   quit    set     version
+2013-01-28 09:21:29		  buffer  debug   input   mute    reload  unset   wait   
+2013-01-28 09:21:29		  color   filter  key     plugin  repeat  upgrade window 
+2013-01-28 09:21:29		[alias]
+2013-01-28 09:21:29		  AAWAY   ANICK   CL      J       M       REDRAW  UB      W       WW     
+2013-01-28 09:21:29		  alias   BYE     CLOSE   K       MUB     SAY     UMODE   WC     
+2013-01-28 09:21:29		  AME     C       EXIT    KB      N       SIGNOFF unalias WI     
+2013-01-28 09:21:29		  AMSG    CHAT    IG      LEAVE   Q       T       V       WII    
+2013-01-28 09:21:29		[irc]
+2013-01-28 09:21:29		  admin      devoice    kickban    names      quote      service    userhost  
+2013-01-28 09:21:29		  allchan    die        kill       nick       reconnect  servlist   users     
+2013-01-28 09:21:29		  allserv    disconnect links      notice     rehash     squery     version   
+2013-01-28 09:21:29		  ban        halfop     list       notify     restart    squit      voice     
+2013-01-28 09:21:29		  connect    ignore     lusers     op         sajoin     stats      wallchops 
+2013-01-28 09:21:29		  ctcp       info       map        oper       samode     summon     wallops   
+2013-01-28 09:21:29		  cycle      invite     me         part       sanick     time       who       
+2013-01-28 09:21:29		  dcc        ison       mode       ping       sapart     topic      whois     
+2013-01-28 09:21:29		  dehalfop   join       motd       pong       saquit     trace      whowas    
+2013-01-28 09:21:29		  deop       kick       msg        query      server     unban     
+2013-01-28 09:21:29		[logger]
+2013-01-28 09:21:29		  logger
+2013-01-28 09:21:29		[relay]
+2013-01-28 09:21:29		  relay
+2013-01-28 09:21:29		[rmodifier]
+2013-01-28 09:21:29		  rmodifier
+2013-01-28 09:21:29		[script]
+2013-01-28 09:21:29		  script
+2013-01-28 09:21:29		[tcl]
+2013-01-28 09:21:29		  tcl
+2013-01-28 09:21:29		[xfer]
+2013-01-28 09:21:29		  me   xfer
+2013-01-28 09:22:01	=!=	Error with command "disconnect" (try /help disconnect)
+2013-01-28 09:22:08		[irc]  /disconnect  [<server>|-all|-pending [<reason>]]
+2013-01-28 09:22:08		disconnect from one or all IRC servers
+2013-01-28 09:22:08		  server: server name to disconnect
+2013-01-28 09:22:08		    -all: disconnect from all servers
+2013-01-28 09:22:08		-pending: cancel auto-reconnection on servers currently reconnecting
+2013-01-28 09:22:08		  reason: reason for quit
+2013-01-28 09:22:14		[irc]  /disconnect  [<server>|-all|-pending [<reason>]]
+2013-01-28 09:22:14		disconnect from one or all IRC servers
+2013-01-28 09:22:14		  server: server name to disconnect
+2013-01-28 09:22:14		    -all: disconnect from all servers
+2013-01-28 09:22:14		-pending: cancel auto-reconnection on servers currently reconnecting
+2013-01-28 09:22:14		  reason: reason for quit
+2013-01-28 09:22:26	=!=	Error with command "disconnect" (try /help disconnect)
+2013-01-28 09:25:37		Option changed: irc.server.freenode.username = "scw"
+2013-01-28 09:27:36		[core]
+2013-01-28 09:27:36		  away    command help    layout  proxy   save    uptime 
+2013-01-28 09:27:36		  bar     cursor  history mouse   quit    set     version
+2013-01-28 09:27:36		  buffer  debug   input   mute    reload  unset   wait   
+2013-01-28 09:27:36		  color   filter  key     plugin  repeat  upgrade window 
+2013-01-28 09:27:36		[alias]
+2013-01-28 09:27:36		  AAWAY   ANICK   CL      J       M       REDRAW  UB      W       WW     
+2013-01-28 09:27:36		  alias   BYE     CLOSE   K       MUB     SAY     UMODE   WC     
+2013-01-28 09:27:36		  AME     C       EXIT    KB      N       SIGNOFF unalias WI     
+2013-01-28 09:27:36		  AMSG    CHAT    IG      LEAVE   Q       T       V       WII    
+2013-01-28 09:27:36		[irc]
+2013-01-28 09:27:36		  admin      devoice    kickban    names      quote      service    userhost  
+2013-01-28 09:27:36		  allchan    die        kill       nick       reconnect  servlist   users     
+2013-01-28 09:27:36		  allserv    disconnect links      notice     rehash     squery     version   
+2013-01-28 09:27:36		  ban        halfop     list       notify     restart    squit      voice     
+2013-01-28 09:27:36		  connect    ignore     lusers     op         sajoin     stats      wallchops 
+2013-01-28 09:27:36		  ctcp       info       map        oper       samode     summon     wallops   
+2013-01-28 09:27:36		  cycle      invite     me         part       sanick     time       who       
+2013-01-28 09:27:36		  dcc        ison       mode       ping       sapart     topic      whois     
+2013-01-28 09:27:36		  dehalfop   join       motd       pong       saquit     trace      whowas    
+2013-01-28 09:27:36		  deop       kick       msg        query      server     unban     
+2013-01-28 09:27:36		[logger]
+2013-01-28 09:27:36		  logger
+2013-01-28 09:27:36		[relay]
+2013-01-28 09:27:36		  relay
+2013-01-28 09:27:36		[rmodifier]
+2013-01-28 09:27:36		  rmodifier
+2013-01-28 09:27:36		[script]
+2013-01-28 09:27:36		  script
+2013-01-28 09:27:36		[tcl]
+2013-01-28 09:27:36		  tcl
+2013-01-28 09:27:36		[xfer]
+2013-01-28 09:27:36		  me   xfer
