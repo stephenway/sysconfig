@@ -123,3 +123,6 @@
 [submodule "vim/vim.symlink/bundle/vimux"]
 	path = vim/vim.symlink/bundle/vimux
 	url = git://github.com/benmills/vimux.git
+[submodule "vim/vim.symlink/bundle/vim-multiple-cursors"]
+	path = vim/vim.symlink/bundle/vim-multiple-cursors
+	url = git://github.com/terryma/vim-multiple-cursors.git
