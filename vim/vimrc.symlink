@@ -16,7 +16,7 @@ source ~/.vim/tmux.vim
 " Per-directory .vimrc files
 set exrc
 set secure
-set nocp
+
 
 
 " Pathogen Initialization
@@ -87,6 +87,8 @@ set viminfo='100,f1  " Save up to 100 marks, enable capital marks
 set noswapfile
 set nobackup
 set nowritebackup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Persistent Undo
 " ===============
@@ -110,6 +112,7 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
+set cursorline
 
 filetype plugin on
 filetype indent on
@@ -131,8 +134,25 @@ set nofoldenable        " Don't fold by default
 "set wildmode=list:longest
 set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~     " Stuff to ignore when tab completing
-set wildignore+=*vim/backups*
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.scssc                          " Sass cache files
+set wildignore+=*.sw?,*vim/backups*              " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+
+set wildignore+=*.luac                           " Lua byte code
+
+set wildignore+=migrations                       " Django migrations
+set wildignore+=*.pyc                            " Python byte code
+
+set wildignore+=*.orig
+
+" Clojure/Leiningen
+set wildignore+=classes
+set wildignore+=lib
 
 " Scrolling
 " =========
@@ -151,4 +171,3 @@ set statusline+=\ %f\ %m\ %r                    " Show filename/path
 set statusline+=%=                              " Set right-side status info after this line
 set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
 set statusline+=\                               " Set ending space
-

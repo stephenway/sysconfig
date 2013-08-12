@@ -1,22 +1,4 @@
-alias tmux="TERM=screen-256color-bce tmux"
-
-function mx() {
-  if [[ -z $1 ]]; then
-    SESSION=$(basename $PWD);
-  else
-    SESSION=$1
-  fi
-
-  if [[ -x $DOTFILES/tmux/workspaces/$SESSION ]]; then
-    $DOTFILES/tmux/workspaces/$SESSION
-  else
-    if ! (tmux has-session -t $SESSION >/dev/null 2>&1); then
-      tmux new-session -s $SESSION -n zsh -d
-    fi
-
-    tmux attach -t $SESSION
-  fi
-}
+alias tmux="TERM=xterm-256color tmux"
 
 # Wrap ssh commmand to allow smart pane behavior in tmux.
 #

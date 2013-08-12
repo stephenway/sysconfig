@@ -1,16 +1,16 @@
-export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/opt/boxen/nvm/v0.8.8/bin
+export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/opt/boxen/nvm/v0.8.8/bin:$HOME/android-sdk/tools
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 export DOTFILES=$HOME/.dotfiles
 
-# easier reference to second drive
-export MEDIA="/Volumes/Media\ HD"
-
 # your project folder that we can `c [tab]` to
-export PROJECTS=$MEDIA/code
+export PROJECTS=$HOME/code
+
+export TERM=xterm-256color
 
 source /opt/boxen/env.sh
+[ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh && nvm use 0.8.8
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file

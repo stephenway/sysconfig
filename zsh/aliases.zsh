@@ -13,9 +13,12 @@ alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 alias reload!='. ~/.zshrc'
+alias remount!='sudo automount -vc'
 alias reindex!='/Applications/Alfred\ 2.app/Contents/Frameworks/Alfred\ Framework.framework/Versions/A/Resources/reindex.sh ; exit;'
 alias count='wc -l'
 alias tft='curl "http://itsthisforthat.com/api.php?text"'
+alias mcabber='TERM=screen-256color-bce mcabber'
+alias browserstacktunnel='java -jar BrowserStackTunnel.jar $BROWSERSTACK_KEY'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -37,6 +40,10 @@ alias ds_nomore="find . -type f -name '*.DS_Store' -ls -delete"
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# Macbook Display
+alias displayoff="sudo nvram boot-args='iog=0x0'"
+alias displayon="sudo nvram -d boot-args"
 
 # Control Airport
 alias airport='networksetup -setairportpower en1'

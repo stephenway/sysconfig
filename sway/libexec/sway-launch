@@ -3,14 +3,28 @@
 # Summary: Launch extra apps
 # Help: Mostly used when I step in the office for email, messages, etc
 #
-#    sway launch [topic]
+#    sway launch [work]
+#    sway launch [quit]
 
 set -e
-TOPIC=${1:-"work"}
 
-if [ $TOPIC="work" ]; then
-  for APP in "Messages" "Feeds" "Fantastical" "Frank DeLoupe" "MailTab Pro for Gmail" "Droplr"
+ACTION=${1}
+CMD="open -a"
+
+case $ACTION in
+
+  work )
+  for APP in "Feeds.app" "Fantastical.app" "Frank DeLoupe.app" "MailTab Pro for Gmail.app" "Droplr.app"
   do
-    open /Applications/$APP.app
+    $CMD "/Applications/$APP"
   done
-fi
+  ;;
+
+  quit )
+  for APP in "Feeds" "Fantastical" "Frank DeLoupe" "MailTab Pro for Gmail" "Droplr"
+  do
+    killall "$APP"
+  done
+  ;;
+
+esac
