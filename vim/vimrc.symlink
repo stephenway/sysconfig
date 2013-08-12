@@ -16,17 +16,57 @@ source ~/.vim/tmux.vim
 " Per-directory .vimrc files
 set exrc
 set secure
+set nocompatible
 
+filetype off
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" Pathogen Initialization
-" =======================
+" required
+Bundle 'gmarik/vundle'
+" github
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
+Bundle 'henrik/vim-reveal-in-finder'
 
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+Bundle 'benmills/vimux'
+Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-rake'
+Bundle 'epmatsw/ag.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'Townk/vim-autoclose'
+
+Bundle 'tpope/vim-haml'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'mattn/gist-vim'
+Bundle 'juvenn/mustache.vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'skwp/vim-colors-solarized'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'tlib'
+Bundle 'bundler.vim'
+Bundle 'vim-coffee-script'
+Bundle 'commentary.vim'
+Bundle 'ZoomWin'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+" Bundle 'file:///Users/gmarik/path/to/plugin'
+
+filetype plugin indent on     " required!
 
 source ~/.vim/colors.vim
 call SetBackgroundForIterm()
