@@ -43,6 +43,7 @@ Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Townk/vim-autoclose'
+Bundle 'terryma/vim-multiple-cursors'
 
 Bundle 'tpope/vim-haml'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
