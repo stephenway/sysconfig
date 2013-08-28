@@ -71,7 +71,6 @@
 
 [core]
   excludesfile = /opt/boxen/config/git/gitignore
-  excludesfile = /opt/boxen/config/git/gitignore
 
 [init]
   templatedir = ~/.git_template

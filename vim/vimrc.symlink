@@ -6,19 +6,15 @@ if filereadable(expand('~/.vimrc.before'))
   source ~/.vimrc.before
 endif
 
-" Plugin overrides
-source ~/.vim/autocmd.vim
-source ~/.vim/rails.vim
-source ~/.vim/ruby.vim
-source ~/.vim/common.vim
-source ~/.vim/tmux.vim
-
 " Per-directory .vimrc files
 set exrc
 set secure
 set nocompatible
 
 filetype off
+
+" Vundle
+" ======
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -212,3 +208,11 @@ set statusline+=\ %f\ %m\ %r                    " Show filename/path
 set statusline+=%=                              " Set right-side status info after this line
 set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
 set statusline+=\                               " Set ending space
+
+" Plugin overrides
+source ~/.vim/autocmd.vim
+source ~/.vim/format.vim
+source ~/.vim/rails.vim
+source ~/.vim/ruby.vim
+source ~/.vim/common.vim
+source ~/.vim/tmux.vim
