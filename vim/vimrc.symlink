@@ -6,11 +6,7 @@ if filereadable(expand('~/.vimrc.before'))
   source ~/.vimrc.before
 endif
 
-" Per-directory .vimrc files
-set exrc
-set secure
 set nocompatible
-
 filetype off
 
 " Vundle
@@ -18,55 +14,34 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" required
 Bundle 'gmarik/vundle'
-" github
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-surround'
-Bundle 'henrik/vim-reveal-in-finder'
 
-Bundle 'benmills/vimux'
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-rake'
-Bundle 'epmatsw/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'Townk/vim-autoclose'
-Bundle 'terryma/vim-multiple-cursors'
-
-Bundle 'tpope/vim-haml'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'mattn/gist-vim'
-Bundle 'juvenn/mustache.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-
-Bundle 'skwp/vim-colors-solarized'
-
-" vim-scripts repos
 Bundle 'L9'
-Bundle 'tlib'
-Bundle 'bundler.vim'
-Bundle 'vim-coffee-script'
-Bundle 'commentary.vim'
-Bundle 'ZoomWin'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
+Bundle 'tpope/vim-fugitive'
+Bundle 'chriskempson/base16-vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'gh:vim-ruby/vim-ruby'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'mattn/webapi-vim'
+Bundle 'tpope/vim-rails.git'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'tpope/vim-dispatch'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/gist-vim'
+Bundle 'epmatsw/ag.vim'
+Bundle 'tpope/vim-commentary'
+Bundle 'tejr/vim-tmux'
+Bundle 'sjl/vitality.vim'
+Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
 
-filetype plugin indent on     " required!
+" Per-directory .vimrc files
+set exrc
+set secure
 
-source ~/.vim/colors.vim
-call SetBackgroundForIterm()
 
 " Syntax
 " ======
@@ -96,6 +71,30 @@ set splitbelow                  " Opens horizontal split below current window
 "set shortmess=filnxtToOI       " see :help shortmess
                                 " http://items.sjbach.com/319/configuring-vim-right
 
+" Plugin Settings
+" ===============
+nnoremap <leader>W :Gwrite<CR>
+nnoremap <leader>C :Gcommit -v<CR>
+nnoremap <leader>S :Gstatus \| 7<CR>
+inoremap <leader>W <Esc><leader>W
+inoremap <leader>C <Esc><leader>C
+inoremap <leader>S <Esc><leader>S
+nmap <leader>f :NERDTreeFind<CR>
+nmap <Leader>B :CtrlPBuffer<CR>
+nmap <leader>] :TagbarToggle<CR>
+nmap <leader><space> :call whitespace#strip_trailing()<CR>
+let g:ctrlp_match_window = 'order:ttb,max:15'
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Mouse
 " ======
@@ -149,7 +148,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-set cursorline
 
 filetype plugin on
 filetype indent on
@@ -216,3 +214,4 @@ source ~/.vim/rails.vim
 source ~/.vim/ruby.vim
 source ~/.vim/common.vim
 source ~/.vim/tmux.vim
+source ~/.vim/colors.vim

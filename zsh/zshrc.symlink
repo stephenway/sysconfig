@@ -1,4 +1,4 @@
-export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/opt/boxen/nvm/v0.8.8/bin:$HOME/android-sdk/tools
+export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:$HOME/android-sdk/tools:/opt/boxen/homebrew/Cellar/weechat
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
@@ -10,7 +10,6 @@ export PROJECTS=$HOME/code
 export TERM=xterm-256color
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-[ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh && nvm use 0.8.8
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file

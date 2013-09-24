@@ -140,56 +140,9 @@ function git_time_since_commit() {
   fi
 }
 
-# This keeps the number of todos always available the right hand side of my
-# command line. I filter it to only count those tagged as "+next", so it's more
-# of a motivation to clear out the list.
-prompt_todo_count(){
-  if $(which todo.sh &> /dev/null)
-  then
-    num=$(echo $(todo.sh ls $1 | wc -l))
-    let todos=num-2
-    echo "$todos"
-  fi
-}
-
-function prompt_todo_text() {
-  local COUNT=$(prompt_todo_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
-
-function notes_count() {
-  if [[ -z $1 ]]; then
-    local NOTES_PATTERN="TODO|FIXME|HACK";
-  else
-    local NOTES_PATTERN=$1;
-  fi
-  grep -ERn "\b($NOTES_PATTERN)\b" {app,config,lib,spec,test} 2>/dev/null | wc -l | sed 's/ //g'
-}
-
-function notes_prompt() {
-  local COUNT=$(notes_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
-
-
 export PROMPT='%{$fg[blue]%}%c \
 $(git_prompt_info)\
 $(git_time_since_commit)%{$reset_color%} \
 %{$fg[$(prompt_color)]%}%(!.#.⚡)%{$reset_color%} '
 
-set_prompt () {
-  #export RPROMPT="$(notes_prompt TODO) %{$fg_bold[yellow]%}$(notes_prompt HACK)%{$reset_color%} %{$fg_bold[red]%}$(notes_prompt FIXME)%{$reset_color%} %{$fg_bold[white]%}$(prompt_todo_text +next)%{$reset_color%}"
-  export RPROMPT="$(prompt_todo_text +next)"
-}
-
-precmd() {
-  set_prompt
-}
+export RPROMPT=""

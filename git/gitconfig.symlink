@@ -96,3 +96,6 @@
 # vim: ft=gitconfig
 [credential]
   helper = /opt/boxen/bin/boxen-git-credential
+
+[web]
+  browser = open

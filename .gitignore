@@ -3,3 +3,4 @@
 .netrwhist
 nginx/vhosts/github*
 .DS_Store
+vim/vim.symlink/bundle/
