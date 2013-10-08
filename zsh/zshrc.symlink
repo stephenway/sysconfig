@@ -1,37 +1,19 @@
-export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:$HOME/android-sdk/tools:/opt/boxen/homebrew/Cellar/weechat
-
-# shortcut to this dotfiles path is $ZSH
+export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:$HOME/android-sdk/tools
 export ZSH=$HOME/.dotfiles
 export DOTFILES=$HOME/.dotfiles
-
-# your project folder that we can `c [tab]` to
 export PROJECTS=$HOME/code
-
 export TERM=xterm-256color
 
+# source boxen and .localrc
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+[ -f ~/.localrc ] && source ~/.localrc
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# pure prompt
-autoload -U promptinit
-promptinit
-
-PURE_CMD_MAX_EXEC_TIME=5
-
-prompt pure
+# initialize autocomplete
+autoload -U compinit && compinit
+eval "$(fasd --init posix-alias zsh-hook)"
 
 # quote pasted URLs
 autoload -U url-quote-magic
@@ -40,9 +22,9 @@ zle -N self-insert url-quote-magic
 # load every completion after autocomplete loads
 for config_file ($ZSH/**/completion.sh) source $config_file
 
+# source grc
 source `brew --prefix grc`/etc/grc.bashrc
 
 # source subs
-eval "$($DOTFILES/sway/bin/sway init -)"
 eval "$($DOTFILES/agency/bin/agency init -)"
 eval "$($HOME/.coral/libexec/coral init -)"

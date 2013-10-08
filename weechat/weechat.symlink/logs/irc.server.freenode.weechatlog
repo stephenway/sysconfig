@@ -139,3 +139,89 @@
 2013-01-28 09:25:58	--	- ***************************************************************
 2013-01-28 09:25:58	--	End of /MOTD command.
 2013-01-28 09:25:58	--	User mode [+i] by Stephen1
+2013-10-04 11:37:24	--	irc: connected to chat.freenode.net/6667 (130.239.18.172)
+2013-10-04 11:37:24	--	leguin.freenode.net (leguin.freenode.net): *** Looking up your hostname...
+2013-10-04 11:37:24	--	leguin.freenode.net (leguin.freenode.net): *** Checking Ident
+2013-10-04 11:37:26	--	leguin.freenode.net (leguin.freenode.net): *** Found your hostname
+2013-10-04 11:37:33	--	leguin.freenode.net (leguin.freenode.net): *** No Ident response
+2013-10-04 11:37:33	--	Welcome to the freenode Internet Relay Chat Network Stephen
+2013-10-04 11:37:33	--	Your host is leguin.freenode.net[130.239.18.172/6667], running version ircd-seven-1.1.3
+2013-10-04 11:37:33	--	This server was created Mon Dec 31 2012 at 22:37:58 CET
+2013-10-04 11:37:33	--	leguin.freenode.net ircd-seven-1.1.3 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+2013-10-04 11:37:33	--	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+2013-10-04 11:37:33	--	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+2013-10-04 11:37:33	--	EXTBAN=$,arxz WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+2013-10-04 11:37:33	--	There are 221 users and 87737 invisible on 29 servers
+2013-10-04 11:37:33	--	33 :IRC Operators online
+2013-10-04 11:37:33	--	10 :unknown connection(s)
+2013-10-04 11:37:33	--	50286 :channels formed
+2013-10-04 11:37:33	--	I have 3622 clients and 1 servers
+2013-10-04 11:37:33	--	3622 11356 :Current local users 3622, max 11356
+2013-10-04 11:37:33	--	87958 92550 :Current global users 87958, max 92550
+2013-10-04 11:37:33	--	Highest connection count: 11357 (11356 clients) (1800120 connections received)
+2013-10-04 11:37:33	--	- leguin.freenode.net Message of the Day -
+2013-10-04 11:37:33	--	- Welcome to leguin.freenode.net in Umeå, Sweden, EU! Thanks to
+2013-10-04 11:37:33	--	- the Academic Computer Club at Umeå University for sponsoring
+2013-10-04 11:37:33	--	- this server!
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- LE GUIN, URSULA K. (1929-) Born in Berkeley, California,
+2013-10-04 11:37:33	--	- Ursula Le Guin is an american author primarily known for
+2013-10-04 11:37:33	--	- her Science Fiction and Fantasy. She has been awarded the
+2013-10-04 11:37:33	--	- it is a bit inconsistent.
+2013-10-04 11:37:33	--	- Hugo and Nebula awards, and is best known for her Earthsea
+2013-10-04 11:37:33	--	- and Hainish series.
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- Welcome to freenode - supporting the free and open source
+2013-10-04 11:37:33	--	- software communities since 1998.
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- By connecting to freenode you indicate that you have read and
+2013-10-04 11:37:33	--	- agree to adhere to our policies and procedures as per the
+2013-10-04 11:37:33	--	- website (http://freenode.net/).
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- We would like to remind you that unauthorised public logging
+2013-10-04 11:37:33	--	- of channels on the network is prohibited. Public channel
+2013-10-04 11:37:33	--	- logging should only take place where the channel owner(s) has
+2013-10-04 11:37:33	--	- requested this and users of the channel are all made aware
+2013-10-04 11:37:33	--	- (if you are publically logging your channel, you may wish to
+2013-10-04 11:37:33	--	- keep a notice in the topic and perhaps as an on-join message).
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- freenode runs an open proxy scanner. For details on freenode
+2013-10-04 11:37:33	--	- network policy, please take a look at our policy page
+2013-10-04 11:37:33	--	- (http://freenode.net/policy.shtml).  Your use of the network
+2013-10-04 11:37:33	--	- indicates your acceptance of this policy.
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- Please join #freenode for any network-related questions or
+2013-10-04 11:37:33	--	- queries, there are numerous freenode volunteers and helpful
+2013-10-04 11:37:33	--	- users who would be happy to try answer any questions you might
+2013-10-04 11:37:33	--	- have.
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- Check out www.fossevents.org to find out what is happening in
+2013-10-04 11:37:33	--	- your area, join us at FOSSCON (www.fosscon.org) for talks and
+2013-10-04 11:37:33	--	- real-life collaboration or bring a picnic and come join
+2013-10-04 11:37:33	--	- like-minded geeks for a geeknic (www.geeknic.org) somewhere
+2013-10-04 11:37:33	--	- close to you.
+2013-10-04 11:37:33	--	- Lastly, massive thanks to the OSU Open Source Lab
+2013-10-04 11:37:33	--	- (http://osuosl.org/) and Private Internet Access
+2013-10-04 11:37:33	--	- (https://www.privateinternetaccess.com/) for their sustained,
+2013-10-04 11:37:33	--	- long term support and dedication they show to the FOSS
+2013-10-04 11:37:33	--	- communities.
+2013-10-04 11:37:33	--	-
+2013-10-04 11:37:33	--	- ***************************************************************
+2013-10-04 11:37:33	--	- Please read http://blog.freenode.net/2010/11/be-safe-out-there/
+2013-10-04 11:37:33	--	- ***************************************************************
+2013-10-04 11:37:33	--	End of /MOTD command.
+2013-10-04 11:37:33	--	User mode [+i] by Stephen
+2013-10-04 11:37:33	--	NickServ (NickServ@services.): This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+2013-10-04 11:37:33	--	NickServ (NickServ@services.): You have 30 seconds to identify to your nickname before it is changed.
+2013-10-04 11:38:03	--	NickServ (NickServ@services.): You failed to identify in time for the nickname stephen
+2013-10-04 11:38:34	--	MSG(NickServ): identify goosyhollow
+2013-10-04 11:38:35	--	NickServ (NickServ@services.): Guest15861 is not a registered nickname.
+2013-10-04 11:38:58	=!=	irc: too few arguments for "msg" command
+2013-10-04 11:39:05	--	MSG(NickServ): identify stephenway
+2013-10-04 11:39:05	--	NickServ (NickServ@services.): Guest15861 is not a registered nickname.
+2013-10-04 11:40:41	--	MSG(NickServ): IDENTIFY stephenway goosyhollow
+2013-10-04 11:40:42	--	NickServ (NickServ@services.): You are now identified for stephenway.
+2013-10-04 11:40:48	=!=	irc: this buffer is not a channel!
+2013-10-04 11:40:50	=!=	irc: this buffer is not a channel!
+2013-10-04 11:41:27	--	MSG(NickServ): identify goosyhollow
+2013-10-04 11:41:27	--	NickServ (NickServ@services.): You are already logged in as stephenway.

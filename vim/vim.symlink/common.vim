@@ -1,4 +1,3 @@
-
 " Navigation
 " ==========
 " Move between wrapped lines as though they were physical lines.
@@ -49,7 +48,7 @@ set nocompatible
 inoremap jj <esc>
 
 " wrap current paragraph
-nnoremap <leader>w gqip
+" nnoremap <leader>w gqip
 
 " Duplicate a selection
 " Visual mode: D
@@ -59,7 +58,7 @@ vmap D y'>p
 vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 " Remove whitespace
-map <Leader>W :%s/\s\+$//e<CR>
+" map <Leader>W :%s/\s\+$//e<CR>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv

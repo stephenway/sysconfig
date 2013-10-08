@@ -27,6 +27,8 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rbenv'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdtree'
@@ -52,7 +54,7 @@ set t_Co=256
 " ==============
 
 let mapleader='\'
-set gfn=Menlo:h14
+set gfn=Droid\ Sans\ Mono:h14
 set encoding=utf-8
 set number                      " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -66,7 +68,7 @@ set clipboard=unnamed           " Use system clipboard
 set hidden                      " Buffers can exist in the background
 set splitright                  " Opens vertical split right of current window
 set splitbelow                  " Opens horizontal split below current window
-"set shortmess=filnxtToOI       " see :help shortmess
+set shortmess=filnxtToOI        " see :help shortmess
                                 " http://items.sjbach.com/319/configuring-vim-right
 
 " Plugin Settings
@@ -204,6 +206,19 @@ set statusline+=\ %f\ %m\ %r                    " Show filename/path
 set statusline+=%=                              " Set right-side status info after this line
 set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
 set statusline+=\                               " Set ending space
+
+" NERDTree
+" ========
+function! ShowFileInNERDTree()
+  if exists("t:NERDTreeBufName")
+    NERDTreeFind
+  else
+    NERDTree
+    wincmd 1
+    NERDTreeFind
+  endif
+endfunction
+map <leader>f :call ShowFileInNERDTree()<cr>
 
 " Plugin overrides
 source ~/.vim/autocmd.vim

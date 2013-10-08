@@ -1,30 +1,23 @@
-[2013-01-28 09:13:58] weechat 0.3.9.2 (compiled on Jan 28 2013 09:05:44)
-[2013-01-28 09:13:58] Writing configuration file weechat.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file weechat.conf
-[2013-01-28 09:13:58] Writing configuration file plugins.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file plugins.conf
-[2013-01-28 09:13:58] Writing configuration file alias.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file alias.conf
-[2013-01-28 09:13:58] Writing configuration file irc.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file irc.conf
-[2013-01-28 09:13:58] Writing configuration file logger.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file logger.conf
-[2013-01-28 09:13:58] Writing configuration file relay.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file relay.conf
-[2013-01-28 09:13:58] Writing configuration file rmodifier.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file rmodifier.conf
-[2013-01-28 09:13:58] Writing configuration file script.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file script.conf
-[2013-01-28 09:13:58] Writing configuration file xfer.conf (default options)
-[2013-01-28 09:13:58] Reading configuration file xfer.conf
-[2013-01-28 09:17:22] irc: connecting to server chat.freenode.net/6667...
-[2013-01-28 09:25:44] irc: connecting to server chat.freenode.net/6667...
-[2013-01-28 11:36:07] Writing configuration file plugins.conf 
-[2013-01-28 11:36:07] Writing configuration file xfer.conf 
-[2013-01-28 11:36:07] Writing configuration file script.conf 
-[2013-01-28 11:36:07] Writing configuration file rmodifier.conf 
-[2013-01-28 11:36:07] Writing configuration file relay.conf 
-[2013-01-28 11:36:07] Writing configuration file logger.conf 
-[2013-01-28 11:36:07] Writing configuration file irc.conf 
-[2013-01-28 11:36:07] Writing configuration file alias.conf 
-[2013-01-28 11:36:07] Writing configuration file weechat.conf 
+[2013-10-04 11:37:19] WeeChat 0.4.1 (compiled on Sep  5 2013 20:19:22)
+[2013-10-04 11:37:19] Reading configuration file weechat.conf
+[2013-10-04 11:37:20] Reading configuration file plugins.conf
+[2013-10-04 11:37:20] Reading configuration file alias.conf
+[2013-10-04 11:37:20] Writing configuration file charset.conf (default options)
+[2013-10-04 11:37:20] Reading configuration file charset.conf
+[2013-10-04 11:37:20] Reading configuration file irc.conf
+[2013-10-04 11:37:20] irc: connecting to server chat.freenode.net/6667...
+[2013-10-04 11:37:20] Reading configuration file logger.conf
+[2013-10-04 11:37:20] Reading configuration file relay.conf
+[2013-10-04 11:37:20] Reading configuration file rmodifier.conf
+[2013-10-04 11:37:20] Reading configuration file script.conf
+[2013-10-04 11:37:20] Reading configuration file xfer.conf
+[2013-10-04 11:43:21] Writing configuration file plugins.conf 
+[2013-10-04 11:43:21] Writing configuration file xfer.conf 
+[2013-10-04 11:43:21] Writing configuration file script.conf 
+[2013-10-04 11:43:21] Writing configuration file rmodifier.conf 
+[2013-10-04 11:43:21] Writing configuration file relay.conf 
+[2013-10-04 11:43:21] Writing configuration file logger.conf 
+[2013-10-04 11:43:21] Writing configuration file irc.conf 
+[2013-10-04 11:43:21] Writing configuration file charset.conf 
+[2013-10-04 11:43:21] Writing configuration file alias.conf 
+[2013-10-04 11:43:21] Writing configuration file weechat.conf 

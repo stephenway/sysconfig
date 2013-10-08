@@ -84,3 +84,42 @@
 2013-01-28 09:27:36		  tcl
 2013-01-28 09:27:36		[xfer]
 2013-01-28 09:27:36		  me   xfer
+2013-10-04 11:37:20		Plugins loaded: alias, charset, fifo, irc, logger, relay, rmodifier, script, tcl, xfer
+2013-10-04 11:41:44		[core]
+2013-10-04 11:41:44		  away    command filter  key     plugin  repeat  upgrade window 
+2013-10-04 11:41:44		  bar     cursor  help    layout  proxy   save    uptime 
+2013-10-04 11:41:44		  buffer  debug   history mouse   quit    set     version
+2013-10-04 11:41:44		  color   eval    input   mute    reload  unset   wait   
+2013-10-04 11:41:44		[alias]
+2013-10-04 11:41:44		  AAWAY   BYE     EXIT    LEAVE   REDRAW  UMODE   WI     
+2013-10-04 11:41:44		  alias   C       IG      M       SAY     unalias WII    
+2013-10-04 11:41:44		  AME     CHAT    J       MUB     SIGNOFF V       WW     
+2013-10-04 11:41:44		  AMSG    CL      K       N       T       W      
+2013-10-04 11:41:44		  ANICK   CLOSE   KB      Q       UB      WC     
+2013-10-04 11:41:44		[charset]
+2013-10-04 11:41:44		  charset
+2013-10-04 11:41:44		[irc]
+2013-10-04 11:41:44		  admin      disconnect lusers     part       sapart     unban     
+2013-10-04 11:41:44		  allchan    halfop     map        ping       saquit     userhost  
+2013-10-04 11:41:44		  allserv    ignore     me         pong       server     users     
+2013-10-04 11:41:44		  ban        info       mode       query      service    version   
+2013-10-04 11:41:44		  connect    invite     motd       quiet      servlist   voice     
+2013-10-04 11:41:44		  ctcp       ison       msg        quote      squery     wallchops 
+2013-10-04 11:41:44		  cycle      join       names      reconnect  squit      wallops   
+2013-10-04 11:41:44		  dcc        kick       nick       rehash     stats      who       
+2013-10-04 11:41:44		  dehalfop   kickban    notice     restart    summon     whois     
+2013-10-04 11:41:44		  deop       kill       notify     sajoin     time       whowas    
+2013-10-04 11:41:44		  devoice    links      op         samode     topic     
+2013-10-04 11:41:44		  die        list       oper       sanick     trace     
+2013-10-04 11:41:44		[logger]
+2013-10-04 11:41:44		  logger
+2013-10-04 11:41:44		[relay]
+2013-10-04 11:41:44		  relay
+2013-10-04 11:41:44		[rmodifier]
+2013-10-04 11:41:44		  rmodifier
+2013-10-04 11:41:44		[script]
+2013-10-04 11:41:44		  script
+2013-10-04 11:41:44		[tcl]
+2013-10-04 11:41:44		  tcl
+2013-10-04 11:41:44		[xfer]
+2013-10-04 11:41:44		  me   xfer
