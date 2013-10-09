@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# bootstrap installs things.
+
+DOTFILES_ROOT="`pwd`"
+
+set -e
+
+echo ''
+
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1"
+}
+
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+install_boxen () {
+  if ! [ -d /opt/boxen ]
+  then
+    info 'setup /opt/boxen'
+    sudo mkdir -p /opt/boxen
+    sudo chown ${USER}:staff /opt/boxen
+    success '/opt/boxen'
+  fi
+
+  if ! [ -d /opt/boxen/repo ]
+  then
+    info 'clone agencyrevolution/our-boxen'
+    git clone https://github.com/agencyrevolution/our-boxen /opt/boxen/repo
+    cd /opt/boxen/repo
+    success '/opt/boxen/repo'
+    script/boxen --no-fde
+    success 'boxen installed'
+  fi
+
+  cd $DOTFILES_ROOT
+}
+
+install_boxen
