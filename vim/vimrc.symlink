@@ -49,6 +49,9 @@ set secure
 syntax on
 syntax enable
 set t_Co=256
+au BufRead,BufNewFile *.ascx set filetype=html
+au BufRead,BufNewFile *.asp set filetype=html
+au BufRead,BufNewFile *.htm set filetype=html
 
 " General Config
 " ==============
