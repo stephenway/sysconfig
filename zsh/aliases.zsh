@@ -20,7 +20,6 @@ alias count='wc -l'
 alias tft='curl "http://itsthisforthat.com/api.php?text"'
 alias mcabber='TERM=screen-256color-bce mcabber'
 alias browserstacktunnel='java -jar BrowserStackTunnel.jar $BROWSERSTACK_KEY'
-alias sshdevelopment='ssh QUANTUMCLUB\\stephen.way@192.168.168.6'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

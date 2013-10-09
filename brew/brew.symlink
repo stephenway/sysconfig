@@ -43,6 +43,9 @@ brew install rename
 brew install rhino
 brew install tree
 brew install webkit2png
+brew install autojump
+brew install fasd
+brew install grc
 
 # Remove outdated versions from the cellar
 brew cleanup

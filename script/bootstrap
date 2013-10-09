@@ -26,6 +26,15 @@ fail () {
   exit
 }
 
+setup_projects () {
+  if ! [ -d $HOME/code ]
+  then
+    info 'setup projects'
+    mkdir -p $HOME/code
+    success '~/code'
+  fi
+}
+
 setup_gitconfig () {
   if ! [ -f git/gitconfig.symlink ]
   then
@@ -114,8 +123,20 @@ install_dotfiles () {
   done
 }
 
+install_dependencies() {
+  git submodule init
+  git submodule update
+  git clone https://github.com/mislav/coral.git $HOME/.coral
+  $HOME/.coral/bin/coral init
+  git clone https://github.com/sferik/t.git $HOME/code/sferik/t
+  ln -nvfs $HOME/code/sferik/t zsh/functions/_t
+  ln -nvfs $HOME/.dotfiles/zsh/pure.zsh zsh/functions/prompt_pure_setup
+}
+
+setup_projects
 setup_gitconfig
 install_dotfiles
+install_dependencies
 
 # If we are on a mac, lets install and setup homebrew
 if [ "$(uname -s)" == "Darwin" ]
