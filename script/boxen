@@ -46,10 +46,6 @@ install_boxen () {
   fi
 
   cd $DOTFILES_ROOT
-
-  info 'Closing terminal and opening up iTerm.'
-  open /Applications/iTerm.app
-  killall -KILL Terminal
 }
 
 install_boxen
