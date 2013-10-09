@@ -127,8 +127,6 @@ install_dependencies() {
   if ! [ -d $HOME/.coral ]
   then
     git clone https://github.com/mislav/coral.git $HOME/.coral
-    $HOME/.coral/bin/coral init
-    cd $DOTFILES_ROOT
   fi
 
   if ! [ -d $HOME/code/sferik/t ]
