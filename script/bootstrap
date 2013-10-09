@@ -126,11 +126,31 @@ install_dotfiles () {
 install_dependencies() {
   git submodule init
   git submodule update
-  git clone https://github.com/mislav/coral.git $HOME/.coral
-  $HOME/.coral/bin/coral init
-  git clone https://github.com/sferik/t.git $HOME/code/sferik/t
+
+  if ! [ -d $HOME/.coral ]
+  then
+    git clone https://github.com/mislav/coral.git $HOME/.coral
+    $HOME/.coral/bin/coral init
+    cd $DOTFILES_ROOT
+  fi
+
+  if ! [ -d $HOME/code/sferik/t ]
+  then
+    git clone https://github.com/sferik/t.git $HOME/code/sferik/t
+  fi
+
   ln -nvfs $HOME/code/sferik/t zsh/functions/_t
   ln -nvfs $HOME/.dotfiles/zsh/pure.zsh zsh/functions/prompt_pure_setup
+
+  git clone https://github.com/gmarik/vundle $HOME/.dotfiles/vim/vim.symlink/bundle/vundle
+  vim +BundleInstall +qall
+
+  if ! [ -f /Applications/Slate.app ]
+  then
+    cd /Applications
+    curl http://www.ninjamonkeysoftware.com/slate/versions/slate-latest.tar.gz | tar -xz
+    cd $DOTFILES_ROOT
+  fi
 }
 
 setup_projects

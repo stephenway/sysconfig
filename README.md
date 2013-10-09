@@ -19,4 +19,5 @@ they do.
 
 `script/boxen` - Installs boxen for agencyrevolution
 `script/bootstrap` - Creates symlinks these dotfiles in your home folder.
+`brew/brew.symlink` - Setup homebrew packages
 
