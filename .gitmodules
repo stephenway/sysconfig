@@ -7,7 +7,7 @@
   url = git://github.com/vim-scripts/ack.vim.git
   ignore = dirty
 [submodule "vim/vim.symlink/bundle/ag.vim"]
-	path = vim/vim.symlink/ag.vim
+	path = vim/vim.symlink/bundle/ag.vim
 	url = git://github.com/epmatsw/ag.vim.git
 [submodule "vim/vim.symlink/bundle/ctrlp"]
 	path = vim/vim.symlink/bundle/ctrlp
