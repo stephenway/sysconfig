@@ -124,9 +124,6 @@ install_dotfiles () {
 }
 
 install_dependencies() {
-  git submodule init
-  git submodule update
-
   if ! [ -d $HOME/.coral ]
   then
     git clone https://github.com/mislav/coral.git $HOME/.coral
@@ -151,6 +148,9 @@ install_dependencies() {
     curl http://www.ninjamonkeysoftware.com/slate/versions/slate-latest.tar.gz | tar -xz
     cd $DOTFILES_ROOT
   fi
+
+  git submodule init
+  git submodule update
 }
 
 setup_projects
