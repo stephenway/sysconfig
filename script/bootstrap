@@ -134,6 +134,8 @@ install_dependencies() {
     git clone https://github.com/sferik/t.git $HOME/code/sferik/t
   fi
 
+  git clone https://github.com/agencyrevolution/agency $DOTFILES_ROOT/agency
+
   ln -nvfs $HOME/code/sferik/t zsh/functions/_t
   ln -nvfs $HOME/.dotfiles/zsh/pure.zsh zsh/functions/prompt_pure_setup
 

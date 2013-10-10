@@ -27,25 +27,35 @@ fail () {
 }
 
 install_boxen () {
+  if [ -d /opt/boxen ]
+  then
+    info 'removing your boxen '
+    sudo rm -rf /opt/boxen
+    success 'removed boxen '
+  fi
   if ! [ -d /opt/boxen ]
   then
-    info 'setup /opt/boxen'
+    info 'setup boxen directory '
     sudo mkdir -p /opt/boxen
     sudo chown ${USER}:staff /opt/boxen
-    success '/opt/boxen'
+    success 'setup '
   fi
 
   if ! [ -d /opt/boxen/repo ]
   then
-    info 'clone agencyrevolution/our-boxen'
+    info 'cloning agencyrevolution/our-boxen '
     git clone https://github.com/agencyrevolution/our-boxen /opt/boxen/repo
     cd /opt/boxen/repo
-    success '/opt/boxen/repo'
+    success 'cloned '
     script/boxen --no-fde
-    success 'boxen installed'
+    success 'boxen installed '
   fi
 
   cd $DOTFILES_ROOT
+
+  info 'Switching to iTerm '
+  open /Applications/iTerm.app
+  killall -KILL Terminal
 }
 
 install_boxen
