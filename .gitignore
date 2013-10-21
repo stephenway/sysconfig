@@ -4,6 +4,6 @@
 nginx/vhosts/github*
 .DS_Store
 vim/vim.symlink/bundle/
-weechat/weechat.symlink/logs
+weechat/weechat.symlink/logs/
 .weechatlog
 .log
