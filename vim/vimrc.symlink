@@ -181,6 +181,7 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.scssc                          " Sass cache files
 set wildignore+=*.sw?,*vim/backups*              " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=node_modules                     " Node Modules
 
 set wildignore+=*.luac                           " Lua byte code
 
