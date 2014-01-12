@@ -37,8 +37,10 @@ Bundle 'epmatsw/ag.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tejr/vim-tmux'
 Bundle 'ervandew/supertab'
-Bundle 'kien/ctrlp.vim'
 Bundle 'gem.vim'
+Bundle 'vim-copy-as-rtf'
+Bundle 'kien/ctrlp.vim'
+Bundle 'justinmk/vim-gtfo'
 
 " Per-directory .vimrc files
 set exrc
@@ -66,6 +68,9 @@ set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
 set gcr=a:blinkon0              " Disable cursor blink
+set nocursorcolumn
+set nocursorline
+set lazyredraw
 set autoread                    " Reload files changed outside vim
 set laststatus=2                " Always show status line
 set clipboard=unnamed           " Use system clipboard
@@ -233,7 +238,32 @@ source ~/.vim/ruby.vim
 source ~/.vim/common.vim
 source ~/.vim/tmux.vim
 source ~/.vim/colors.vim
+source ~/.vim/ctrlp.vim
 
 colorscheme base16-solarized
 set background=dark
+
+" Git Gutter
+" ==========
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_eager = 0
+
 hi StatusLine ctermfg=5 ctermbg=10 guifg=#6c71c4 guibg=#073642
+
+" Highlight words to avoid in tech writing
+" =======================================
+"
+"   obviously, basically, simply, of course, clearly,
+"   just, everyone knows, However, So, easy
+
+"   http://css-tricks.com/words-avoid-educational-writing/
+
+highlight TechWordsToAvoid ctermbg=red ctermfg=white
+function MatchTechWordsToAvoid()
+        match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+endfunction
+autocmd FileType markdown call MatchTechWordsToAvoid()
+autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
+autocmd InsertEnter *.md call MatchTechWordsToAvoid()
+autocmd InsertLeave *.md call MatchTechWordsToAvoid()
+autocmd BufWinLeave *.md call clearmatches()

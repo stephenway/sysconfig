@@ -36,6 +36,7 @@ bind-key ,      previous-window # <
 bind-key .      next-window     # >
 bind-key <      swap-window -t :-
 bind-key >      swap-window -t :+
+bind-key BSpace switch-client -l
 
 # Smart pane switching with awareness of vim splits
 bind -n C-k run-shell 'tmux-vim-select-pane -U'
@@ -44,11 +45,16 @@ bind -n C-h run-shell 'tmux-vim-select-pane -L'
 bind -n C-l run-shell 'tmux-vim-select-pane -R'
 bind -n "C-\\" run-shell 'tmux-vim-select-pane -l'
 
+# Bring back clear screen under tmux prefix
+bind C-l send-keys 'C-l'
+# Bring back kill line under tmux prefix
+bind C-k send-keys 'C-k'
+
 bind-key n      command-prompt 'rename-window "%%"'
 bind-key N      command-prompt 'rename-session "%%"'
 bind-key Escape copy-mode -u
 bind-key Up     copy-mode -u
-bind-key r      source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+bind-key r      source-file $HOME/.tmux.conf; display "The matrix has been reloaded"
 bind-key R      refresh-client
 bind-key a      send-key C-a
 # -r: can be repeated without pressing prefix#     again (500ms after last '-r' action or prefix)
