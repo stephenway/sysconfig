@@ -76,7 +76,7 @@
   templatedir = ~/.git_template
 
 [push]
-  default = upstream
+	default = simple
 
 [hub]
   protocol = https

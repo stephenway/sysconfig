@@ -24,4 +24,3 @@ cask install betterzipql
 cask install webp-quicklook
 
 update
-doctor

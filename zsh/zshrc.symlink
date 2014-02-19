@@ -1,4 +1,4 @@
-export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:$HOME/android-sdk/tools
+export PATH=$HOME/.dotfiles/bin:.bundle/binstubs:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/usr/lib:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:$HOME/android-sdk/tools
 export ZSH=$HOME/.dotfiles
 export DOTFILES=$HOME/.dotfiles
 export PROJECTS=$HOME/code
@@ -28,3 +28,6 @@ source `brew --prefix grc`/etc/grc.bashrc
 # source subs
 eval "$($DOTFILES/agency/bin/agency init -)"
 eval "$($HOME/.coral/libexec/coral init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
