@@ -58,7 +58,7 @@ au BufRead,BufNewFile *.htm set filetype=html
 " ==============
 
 let mapleader='\'
-set gfn=Droid\ Sans\ Mono:h14
+set gfn=Andale\ Mono:h15
 set encoding=utf-8
 set number                      " Line numbers are good
 set backspace=indent,eol,start  " Allow backspace in insert mode
@@ -105,6 +105,7 @@ endif
 
 " Send more characters for redraws
 set ttyfast
+set lazyredraw
 
 " Enable mouse use in all modes
 set mouse=a
@@ -233,6 +234,7 @@ source ~/.vim/ruby.vim
 source ~/.vim/common.vim
 source ~/.vim/tmux.vim
 source ~/.vim/colors.vim
+source ~/.vim/ctrlp.vim
 
 colorscheme base16-solarized
 set background=dark
