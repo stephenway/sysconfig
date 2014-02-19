@@ -28,3 +28,6 @@ source `brew --prefix grc`/etc/grc.bashrc
 # source subs
 eval "$($DOTFILES/agency/bin/agency init -)"
 eval "$($HOME/.coral/libexec/coral init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
