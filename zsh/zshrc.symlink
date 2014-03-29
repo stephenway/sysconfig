@@ -29,5 +29,8 @@ source `brew --prefix grc`/etc/grc.bashrc
 eval "$($DOTFILES/agency/bin/agency init -)"
 eval "$($HOME/.coral/libexec/coral init -)"
 
-### Added by the Heroku Toolbelt
+# added by travis gem
+[ -f /Users/stephen/.travis/travis.sh ] && source /Users/stephen/.travis/travis.sh
+
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

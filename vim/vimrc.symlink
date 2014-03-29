@@ -11,7 +11,6 @@ filetype off
 
 " Vundle
 " ======
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -23,12 +22,10 @@ Bundle 'gh:vim-ruby/vim-ruby'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'mattn/webapi-vim'
-Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-rails'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rbenv'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdtree'
@@ -37,10 +34,14 @@ Bundle 'epmatsw/ag.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tejr/vim-tmux'
 Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-rbenv'
 Bundle 'gem.vim'
-Bundle 'vim-copy-as-rtf'
+Bundle 'zerowidth/vim-copy-as-rtf'
 Bundle 'kien/ctrlp.vim'
 Bundle 'justinmk/vim-gtfo'
+Bundle 'jayflo/vim-skip'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'gcmt/wildfire.vim'
 
 " Per-directory .vimrc files
 set exrc
@@ -261,7 +262,7 @@ hi StatusLine ctermfg=5 ctermbg=10 guifg=#6c71c4 guibg=#073642
 
 highlight TechWordsToAvoid ctermbg=red ctermfg=white
 function MatchTechWordsToAvoid()
-        match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+	match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 autocmd FileType markdown call MatchTechWordsToAvoid()
 autocmd BufWinEnter *.md call MatchTechWordsToAvoid()

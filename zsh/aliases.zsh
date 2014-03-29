@@ -1,25 +1,13 @@
-alias tlf="tail -f"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='../..'
 alias cls='clear'
-alias bd='. bd -s'
-alias l='ls'
-alias ll='ls -al'
-alias lh='ls -Alh'
+alias l='ls -al'
 alias -g G='| grep'
-alias -g M='| less'
-alias -g L='| wc -l'
-alias -g ONE="| awk '{ print \$1}'"
-alias e="$EDITOR"
-alias v="$VISUAL"
+alias lastfm='shell-fm'
 alias reload!='. ~/.zshrc'
-alias remount!='sudo automount -vc'
-alias reindex!='/Applications/Alfred\ 2.app/Contents/Frameworks/Alfred\ Framework.framework/Versions/A/Resources/reindex.sh ; exit;'
 alias count='wc -l'
 alias tft='curl "http://itsthisforthat.com/api.php?text"'
-alias mcabber='TERM=screen-256color-bce mcabber'
 alias browserstacktunnel='java -jar BrowserStackTunnel.jar $BROWSERSTACK_KEY'
+
+alias shout="tr '[[:lower:]]' '[[:upper:]]'"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
