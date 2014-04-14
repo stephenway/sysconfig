@@ -34,7 +34,8 @@ set showmode
 nmap <F9> :set ignorecase! ignorecase?<CR>
 
 " Tagbar
-let g:tagbar_ctags_bin = '/opt/boxen/homebrew/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+
 " Toggle tagbar
 nmap <Leader>t :TagbarToggle<CR>
 

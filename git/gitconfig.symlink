@@ -69,9 +69,6 @@
   ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
   theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 
-[core]
-  excludesfile = /opt/boxen/config/git/gitignore
-
 [init]
   templatedir = ~/.git_template
 
@@ -92,10 +89,6 @@
 [diff]
   tool = vimdiff
 	algorithm = patience
-
-# vim: ft=gitconfig
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
 
 [web]
   browser = open

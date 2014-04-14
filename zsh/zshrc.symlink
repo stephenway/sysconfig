@@ -4,8 +4,7 @@ export DOTFILES=$HOME/.dotfiles
 export PROJECTS=$HOME/code
 export TERM=xterm-256color
 
-# source boxen and .localrc
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# source .localrc
 [ -f ~/.localrc ] && source ~/.localrc
 
 # source every .zsh file in this rep
@@ -26,11 +25,4 @@ for config_file ($ZSH/**/completion.sh) source $config_file
 source `brew --prefix grc`/etc/grc.bashrc
 
 # source subs
-eval "$($DOTFILES/agency/bin/agency init -)"
 eval "$($HOME/.coral/libexec/coral init -)"
-
-# added by travis gem
-[ -f /Users/stephen/.travis/travis.sh ] && source /Users/stephen/.travis/travis.sh
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"

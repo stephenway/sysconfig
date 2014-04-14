@@ -1,0 +1,5 @@
+#!/bin/sh
+
+install-brew
+sudo install-brew-cask
+brew bundle

@@ -1,23 +1,31 @@
-# I'm not normally at home, but when I am, I use my dotfiles.
+# My ~ is my castle
 
-Mostly based off pengwynn and holman's dots.
-
-## Mac Apps
-
-Just a short list of apps that don't get installed with these dots.
-
-* Slate - Window position managment
-* iTerm
-* MacVim
-* Weechat
-* Mcabber
+Topical dotfiles like rooms in a house.
 
 ## Setup
 
 Clone to `.dotfiles`, cd into it. The following is a list of commands and what
 they do.
 
-`script/boxen` - Installs boxen for agencyrevolution
-`script/bootstrap` - Creates symlinks these dotfiles in your home folder.
+`script/bootstrap` - Creates symlinks for these dotfiles in your home folder.
 `brew/brew.symlink` - Setup homebrew packages
 
+## The Apps
+
+* ack
+* brew
+* ctags
+* fasd
+* git
+* go
+* grep
+* iTerm 
+* mcabber
+* node
+* npm
+* osx
+* slate
+* tmux
+* vim
+* weechat
+* zsh

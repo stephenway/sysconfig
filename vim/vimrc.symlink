@@ -93,18 +93,6 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <Leader>B :CtrlPBuffer<CR>
 nmap <leader>] :TagbarToggle<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
-let g:ctrlp_match_window = 'order:ttb,max:15'
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --column'
-
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 " Mouse
 " ======
@@ -177,7 +165,6 @@ set nofoldenable        " Don't fold by default
 " Completion
 " ==========
 
-"set wildmode=list:longest
 set wildmode=longest,list,full
 set wildmenu                    " Enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore+=.hg,.git,.svn                    " Version control
@@ -213,24 +200,11 @@ set sidescroll=1
 " ===========
 
 set statusline=                                 " Override default
-set statusline+=%{fugitive#statusline()[4:-2]}  " Show fugitive git info
 set statusline+=\ %f\ %m\ %r                    " Show filename/path
+set statusline+=%{fugitive#statusline()[4:-2]}  " Show fugitive git info
 set statusline+=%=                              " Set right-side status info after this line
 set statusline+=%l/%L:%v                        " Set <line number>/<total lines>:<column>
 set statusline+=\                               " Set ending space
-
-" NERDTree
-" ========
-function! ShowFileInNERDTree()
-  if exists("t:NERDTreeBufName")
-    NERDTreeFind
-  else
-    NERDTree
-    wincmd 1
-    NERDTreeFind
-  endif
-endfunction
-map <leader>f :call ShowFileInNERDTree()<cr>
 
 " Plugin overrides
 source ~/.vim/autocmd.vim
@@ -244,28 +218,4 @@ source ~/.vim/ctrlp.vim
 
 colorscheme base16-solarized
 set background=dark
-
-" Git Gutter
-" ==========
-let g:gitgutter_sign_column_always = 1
-let g:gitgutter_eager = 0
-
 hi StatusLine ctermfg=5 ctermbg=10 guifg=#6c71c4 guibg=#073642
-
-" Highlight words to avoid in tech writing
-" =======================================
-"
-"   obviously, basically, simply, of course, clearly,
-"   just, everyone knows, However, So, easy
-
-"   http://css-tricks.com/words-avoid-educational-writing/
-
-highlight TechWordsToAvoid ctermbg=red ctermfg=white
-function MatchTechWordsToAvoid()
-	match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
-endfunction
-autocmd FileType markdown call MatchTechWordsToAvoid()
-autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertLeave *.md call MatchTechWordsToAvoid()
-autocmd BufWinLeave *.md call clearmatches()
