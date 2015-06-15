@@ -1,3 +1,5 @@
+. ~/.config/fish/local.fish
+
 # Functions
 function um; sudo softwareupdate -i -a; end
 function ub; brew update; brew upgrade --all; brew cleanup; brew doctor; end
