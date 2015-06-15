@@ -52,8 +52,8 @@ help:
 	@echo
 	@echo "   $(COLOR)make all$(NO_COLOR)		Setup and install"
 
-setup: rm -rf ~/.config/fish
-	$(directories)
+setup: $(directories)
+	rm -rf ~/.config/fish
 	chsh -s /usr/local/bin/fish
 	[ -d ${VUNDLE} ] || git clone 'https://github.com/gmarik/Vundle.vim.git' ${VUNDLE}
 
