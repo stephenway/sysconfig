@@ -1,0 +1,65 @@
+Host *
+  TCPKeepAlive yes
+  ServerAliveInterval 60
+  ControlPath ~/.ssh/master-%r@%h:%p
+  ControlMaster auto
+  ControlPersist 1h
+
+
+# Personal
+# ========================
+
+Host blog
+  HostName 52.4.200.64
+  User ubuntu
+  IdentityFile "~/.ssh/private-server-ghost.pem"
+
+Host dashboard
+  Hostname 66.220.103.246
+  Port 2236
+  User pi
+
+Host desktop
+  Hostname 66.220.103.246
+  Port 2223
+  User stephen
+
+Host laptop
+  Hostname laptop.local
+  Port 2223
+  User stephen
+
+Host server
+  HostName 192.168.1.19
+  User stephen
+
+
+# Business
+# ========================
+
+Host revblog
+  HostName wordpress1
+  User stephen.way
+
+Host revblog2
+  HostName 52.26.19.96
+  User ubuntu
+  IdentityFile "~/.ssh/arblog.pem"
+
+Host revblogs
+  HostName 64.13.226.157
+  User root
+
+Host revweb
+  HostName webteam1
+  User stephen.way
+  IdentityFile "~/.ssh/stephen.way.pem"
+
+
+# Clients
+# ========================
+
+Host crawmers
+  Hostname 50.116.7.33
+  User root
+

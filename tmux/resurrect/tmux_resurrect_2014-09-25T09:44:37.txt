@@ -1,0 +1,6 @@
+pane	0	1	:vim	1	:*	0	:/Users/stephen/code/skins/FairwayInsurance	1	vim	:/usr/local/bin/fish -l
+pane	0	1	:vim	1	:*	1	:/Users/stephen/code/skins/FairwayInsurance	0	bash	:gulp SSH_AGENT_PID=5226 TERM=screen-256color
+pane	0	2	:fish	0	:#-	0	:/rev/dev/Portals/kamirault/Skins/FairwayInsurance	1	fish	:/usr/local/bin/fish -l
+window	0	1	1	:*	a758,141x75,0,0[141x65,0,0,0,141x9,0,66,3]
+window	0	2	0	:#-	c5fe,141x75,0,0,1
+state	0	

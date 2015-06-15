@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-ffmpeg -r 1/5 -i img%03d.png -c:v mpeg4 -r 30 -pix_fmt yuv420p out.mp4
