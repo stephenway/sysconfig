@@ -11,3 +11,5 @@ make
 ```
 
 Now your all setup!
+
+`make help` Lets you know all the available commands.
