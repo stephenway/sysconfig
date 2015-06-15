@@ -6,6 +6,7 @@ CONFIG    := ${PWD}
 VUNDLE    := ~/.vim/bundle/Vundle.vim
 
 symlinks = config/fish \
+	bin \
 	gitconfig \
 	gitignore_global \
 	jshintrc \
