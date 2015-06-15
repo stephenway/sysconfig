@@ -1,3 +1,0 @@
-machine api.github.com
-  login $GH_LOGIN
-  password $GH_TOKEN

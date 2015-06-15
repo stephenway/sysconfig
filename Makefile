@@ -9,7 +9,6 @@ symlinks = config/fish \
 	gitconfig \
 	gitignore_global \
 	jshintrc \
-	netrc \
 	profile \
 	ssh/config \
 	tmux \
