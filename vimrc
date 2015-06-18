@@ -201,7 +201,7 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
 " Syntastic should use bash shell for fish users
 set shell=/usr/local/bin/bash
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_json_checkers=['jsonlint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
