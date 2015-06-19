@@ -9,6 +9,7 @@ symlinks = config/fish \
 	bin \
 	gitconfig \
 	gitignore_global \
+	eslintrc \
 	jshintrc \
 	profile \
 	ssh/config \
@@ -54,7 +55,6 @@ help:
 
 setup: $(directories)
 	rm -rf ~/.config/fish
-	chsh -s /usr/local/bin/fish
 	[ -d ${VUNDLE} ] || git clone 'https://github.com/gmarik/Vundle.vim.git' ${VUNDLE}
 
 $(directories):
