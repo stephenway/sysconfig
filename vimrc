@@ -24,7 +24,6 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nono/vim-handlebars'
 Plugin 'pangloss/vim-javascript'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
@@ -40,7 +39,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'eventualbuddha/vim-protobuf'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'vim-scripts/matchit.zip'
@@ -125,13 +123,6 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
-" extra rails.vim help
-autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
-autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
-autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
-autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
-autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
-autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
@@ -201,8 +192,9 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
 " Syntastic should use bash shell for fish users
 set shell=/usr/local/bin/bash
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_scss_checkers = ['scss-lint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
