@@ -32,7 +32,7 @@ function gin; git init; git add .; git commit -m "It begins."; git create -d "$a
 
 # Variables
 set -gx PATH
-set -gx PATH $PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/bin
+set -gx PATH $PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/.bin
 
 set fish_greeting
 set -x EDITOR vim
