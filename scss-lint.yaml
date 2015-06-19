@@ -1,0 +1,5 @@
+linters:
+  IdSelector:
+    enabled: false
+  PlaceholderInExtend:
+    enabled: false

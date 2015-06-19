@@ -13,6 +13,9 @@ function up; ub; uv; un; reset; end
 
 function nu; npm cache clean; npm update; end
 function bu; bower cache clean; bower update; end
+function p; cd /mnt/Samba/Stephen/Mot/Portals/; end
+function p1; p; end
+function p2; cd /mnt/Samba/Stephen/Hai/Portals/; end
 
 function sudo
     if test "$argv" = !!

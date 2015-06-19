@@ -12,6 +12,7 @@ symlinks = config/fish \
 	eslintrc \
 	jshintrc \
 	profile \
+	scss-lint.yml \
 	ssh/config \
 	tmux \
 	tmux.conf \
