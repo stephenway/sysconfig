@@ -1,5 +1,4 @@
-# ~/.sysconfig
-
+# ~/.sysconfig <img src="https://raw.githubusercontent.com/stephenway/sysconfig/master/images/icon-sysconfig.png" width="50">
 Quickly get setup on a new system with sysconfig. 
 
 ## Get it
