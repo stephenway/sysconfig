@@ -1,9 +1,6 @@
 " don't bother with vi compatibility
 set nocompatible
 
-" enable syntax highlighting
-syntax enable
-
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
@@ -13,7 +10,7 @@ call vundle#begin()
 " install Vundle bundles
 Plugin 'gmarik/vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 Plugin 'austintaylor/vim-indentobject'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'juvenn/mustache.vim'
@@ -48,6 +45,12 @@ Plugin 'patrickkettner/bower.vim'
 Plugin 'mxw/vim-jsx'
 
 call vundle#end()
+
+" enable syntax highlighting
+syntax enable
+set background=dark
+colorscheme base16-default
+" let base16colorspace=256
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
