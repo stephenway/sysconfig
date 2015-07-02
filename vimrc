@@ -211,7 +211,7 @@ set statusline+=\                               " Set ending space
 hi StatusLine ctermfg=6 ctermbg=10 guifg=#6c71c4 guibg=#073642
 hi treeDir guifg=#6c71c4 guibg=#073642
 hi VertSplit ctermbg=0 ctermfg=0
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|DS_store\|git\'
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|DS_Store\|git'
 
 " NERDTree
 " Close if last window
