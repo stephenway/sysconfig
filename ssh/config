@@ -49,6 +49,7 @@ Host revblog2
 Host revblogs
   HostName 64.13.226.157
   User root
+  IdentityFile "~/.ssh/dv.pem"
 
 Host revweb
   HostName webteam1
