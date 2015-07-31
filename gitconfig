@@ -71,7 +71,7 @@
   default = simple
 
 [hub]
-  protocol = https
+	protocol = git
 
 [branch]
 
