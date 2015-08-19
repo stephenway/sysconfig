@@ -4,11 +4,11 @@ set nocompatible
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 " install Vundle bundles
-Plugin 'gmarik/vundle.vim'
+Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
 Plugin 'austintaylor/vim-indentobject'
@@ -41,7 +41,6 @@ Plugin 'vim-scripts/greplace.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-obsession'
 Plugin 'ahdinosaur-os/npm.vim'
-Plugin 'patrickkettner/bower.vim'
 Plugin 'mxw/vim-jsx'
 
 call vundle#end()
@@ -50,7 +49,6 @@ call vundle#end()
 syntax enable
 set background=dark
 colorscheme base16-default
-" let base16colorspace=256
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on

@@ -89,3 +89,5 @@
   browser = open
 [core]
 	excludesfile = ~/.gitignore_global
+[credential]
+	helper = cache --timeout=3600
