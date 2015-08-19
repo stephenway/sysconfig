@@ -37,6 +37,7 @@ set -gx PATH $PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/.bin
 set fish_greeting
 set -x EDITOR vim
 set -gx COMMAND_MODE unix2003
+set -gx NODE_ENV development
 set -gx NODE_PATH "/usr/local/lib/node_modules"
 set -gx VIM_BINARY "/usr/local/bin/vim"
 set -x MVIM_BINARY "/usr/local/bin/mvim"

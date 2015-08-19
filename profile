@@ -1,5 +1,6 @@
 export EDITOR=vim
 export PS1='\[\e[0;32m\]\W\[\e[m\] $ '
+export NODE_ENV=development
 
 export PATH="$PATH:$HOME/bin:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
