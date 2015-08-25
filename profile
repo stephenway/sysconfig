@@ -55,6 +55,12 @@ if [ -f `brew --prefix`/usr/local/etc/bash_completion.d ]; then
   . `brew --prefix`/usr/local/etc/bash_completion.d
 fi
 
+# Tmux
+alias t="tmux";
+alias ta="tmux attach -d"
+alias ts="tmux attach -d -t"
+alias tl="tmux ls"
+
 # NPM
 alias nin="sudo npm install --no-bin-links"
 alias ng="npm list -g --depth=0 2>/dev/null"
@@ -70,9 +76,8 @@ alias nu="npm cache clean && npm update"
 alias bu="bower cache clean && bower update"
 
 # SSH
-
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-
+# Misc
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reload="exec $SHELL -l"
