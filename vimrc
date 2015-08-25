@@ -165,7 +165,7 @@ nmap <silent> <S-L> $
 augroup filetype_scss
   au FileType scss,css setlocal foldmethod=marker
   au FileType scss,css setlocal foldmarker={,}
-  au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+  au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>s ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
   au BufNewFile,BufRead *.scss,*.css inoremap <buffer> {<cr> {}<left><cr><tab>.<cr><esc>kA<bs>
 augroup END
 " json
@@ -245,5 +245,6 @@ autocmd BufEnter webpack.*.js let b:dispatch = 'npm start'
 " Fugitive
 nnoremap <Leader>W :Gwrite<cr>
 nnoremap <Leader>C :Gcommit<cr>
-nnoremap <Leader>P :Git<space>push<cr>
-nnoremap <Leader>L :Git<space>pull<cr>
+nnoremap <Leader>S :Gstatus<cr>
+nnoremap <Leader>P :Git push<cr>
+nnoremap <Leader>L :Git pull<cr>
