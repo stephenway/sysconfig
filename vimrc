@@ -242,3 +242,8 @@ autocmd BufEnter *_test.rb let b:dispatch = 'bundle exec testrb %'
 autocmd BufEnter Gemfile let b:dispatch = 'bundle'
 autocmd BufEnter webpack.*.js let b:dispatch = 'npm start'
 
+" Fugitive
+nnoremap <Leader>W :Gwrite<cr>
+nnoremap <Leader>C :Gcommit<cr>
+nnoremap <Leader>P :Git<space>push<cr>
+nnoremap <Leader>L :Git<space>pull<cr>
