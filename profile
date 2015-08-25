@@ -24,6 +24,7 @@ alias p1="p"
 alias p2="cd /mnt/Samba/Stephen/Hai/Portals"
 alias c="cd ~/code"
 alias sysconfig="cd ~/.sysconfig"
+alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # RVM Init
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
@@ -49,6 +50,10 @@ alias gl="git pull"
 alias gt="git tag"
 alias gm="git merge"
 alias bub="GITHUB_HOST=bitbucket.com git"
+
+if [ -f `brew --prefix`/usr/local/etc/bash_completion.d ]; then
+  . `brew --prefix`/usr/local/etc/bash_completion.d
+fi
 
 # NPM
 alias nin="sudo npm install --no-bin-links"
