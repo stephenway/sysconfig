@@ -160,7 +160,7 @@ vnoremap > >gv
 vnoremap < <gv
 nmap <silent> <S-H> ^
 nmap <silent> <S-L> $
-nnoremap <leader>R :so $VIMRC<cr>
+nnoremap <leader>R :so $HOME/.vimrc<cr>
 
 " sass
 augroup filetype_scss
