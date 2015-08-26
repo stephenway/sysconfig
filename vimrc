@@ -153,13 +153,14 @@ inoremap jj <ESC>
 nnoremap <Space> za
 vnoremap <Space> za
 nnoremap <leader>z zMzvzz
-nnoremap <Leader>m :CtrlPBufTag<CR>
-nnoremap <C-m> :m .+1<CR>==
-nnoremap <C-i> :m .-2<CR>==
+nnoremap <Leader>m :CtrlPBufTag<cr>
+nnoremap <C-m> :m .+1<cr>==
+nnoremap <C-i> :m .-2<cr>==
 vnoremap > >gv
 vnoremap < <gv
 nmap <silent> <S-H> ^
 nmap <silent> <S-L> $
+nnoremap <leader>R :so $VIMRC<cr>
 
 " sass
 augroup filetype_scss
