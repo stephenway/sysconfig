@@ -8,6 +8,7 @@ export NODE_ENV=development
 export NODE_PATH="/usr/local/lib/node_modules";
 export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
+export VIMRC="$HOME/.vimrc";
 
 # Traversing
 alias ..="cd .."
