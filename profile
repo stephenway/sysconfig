@@ -37,6 +37,11 @@ alias sudo="sudo "
 alias g="gulp"
 alias gbw="gulp build-watch"
 
+# Harp
+alias h="harp"
+alias hb="harp init src --boilerplate"
+alias hp="harp init src --boilerplate agencyrevolution/prototype-dnn"
+
 # Git/Hub
 eval "$(hub alias -s)"
 alias git="hub";
