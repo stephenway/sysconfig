@@ -39,8 +39,8 @@ alias gbw="gulp build-watch"
 
 # Harp
 alias h="harp"
-alias hb="harp init src --boilerplate"
-alias hp="harp init src --boilerplate agencyrevolution/prototype-dnn"
+alias hb="harp init -b"
+alias hp="harp init -b agencyrevolution/prototype-dnn"
 
 # Git/Hub
 eval "$(hub alias -s)"
