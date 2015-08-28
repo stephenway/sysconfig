@@ -1,6 +1,3 @@
-# Settings
-shopt -s cdspell
-
 # Global Variables
 export PS1='\[\e[0;32m\]\W\[\e[m\] $ ';
 export PATH="$HOME/bin:$HOME/.rvm/bin:$PATH";
