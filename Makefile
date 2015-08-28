@@ -3,13 +3,14 @@
 
 .DEFAULT_GOAL := all
 CONFIG    := ${PWD}
-VUNDLE    := ~/.vim/bundle/Vundle.vim
+VUNDLE    := ~/.vim/bundle/vundle.vim
 
 symlinks = config/fish \
 	bin \
 	gitconfig \
 	gitignore_global \
 	eslintrc \
+	inputrc \
 	jshintrc \
 	profile \
 	scss-lint.yml \
@@ -56,7 +57,7 @@ help:
 
 setup: $(directories)
 	rm -rf ~/.config/fish
-	[ -d ${VUNDLE} ] || git clone 'https://github.com/gmarik/Vundle.vim.git' ${VUNDLE}
+	[ -d ${VUNDLE} ] || git clone 'https://github.com/VundleVim/Vundle.vim.git' ${VUNDLE}
 
 $(directories):
 	mkdir -p ~/.$@
