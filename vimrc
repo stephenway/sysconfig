@@ -60,6 +60,7 @@ set backupcopy=yes                                           " see :help crontab
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " don't store swapfiles in the current directory
 set encoding=utf-8
+set eol
 set expandtab                                                " expand tabs to spaces
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
@@ -174,7 +175,7 @@ augroup filetype_scss
   au BufNewFile,BufRead *.scss,*.css inoremap <buffer> {<cr> {}<left><cr><tab>.<cr><esc>kA<bs>
 
   " Convert 1 line selector to multiline
-  au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>n 0/{<cr>jji<cr><space><space><esc>/}<cr>i<bs><cr><esc>jO<cr>
+  " au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>c /{<cr>jji<cr><space><space><esc>/}<cr>i<bs><cr><esc>jO
 augroup END
 " json
 au BufRead,BufNewFile *.json set filetype=json
