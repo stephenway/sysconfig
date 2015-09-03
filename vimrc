@@ -166,8 +166,15 @@ nnoremap <leader>R :so $HOME/.vimrc<cr>
 augroup filetype_scss
   au FileType scss,css setlocal foldmethod=marker
   au FileType scss,css setlocal foldmarker={,}
+
+  " Sort all rules in current selector
   au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>s ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+  " Easy Bracket Return
   au BufNewFile,BufRead *.scss,*.css inoremap <buffer> {<cr> {}<left><cr><tab>.<cr><esc>kA<bs>
+
+  " Convert 1 line selector to multiline
+  au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>n 0/{<cr>jji<cr><space><space><esc>/}<cr>i<bs><cr><esc>jO<cr>
 augroup END
 " json
 au BufRead,BufNewFile *.json set filetype=json
