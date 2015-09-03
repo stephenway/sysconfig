@@ -3,3 +3,5 @@ linters:
     enabled: false
   PlaceholderInExtend:
     enabled: false
+  NestingDepth:
+    enabled: false
