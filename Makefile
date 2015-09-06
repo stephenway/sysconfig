@@ -61,6 +61,8 @@ $(directories):
 	mkdir -p ~/.$@
 
 install: $(symlinks)
+	$(CONFIG)/brew.sh
+	$(CONFIG)/npm.sh
 
 $(symlinks):
 	test -e $(CONFIG)/$@ && ln -sfn $(CONFIG)/$@ ~/.$@

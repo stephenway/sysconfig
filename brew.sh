@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Install command-line tools using Homebrew.
 
 # Ask for the administrator password upfront.
@@ -63,7 +65,17 @@ brew install tmux
 brew install webkit2png
 brew install zopfli
 
+# Install Cask and Applications
 brew install caskroom/cask/brew-cask
+brew cask install dropbox
+brew cask install java
+brew cask install firefox
+brew cask install licecap
+brew cask install macvim
+brew cask install seil
+brew cask install karabiner
+brew cask install virtualbox
+brew cask install vagrant
 
 # Remove outdated versions from the cellar.
 brew cleanup
