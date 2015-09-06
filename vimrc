@@ -9,39 +9,35 @@ call vundle#begin()
 
 " install Vundle bundles
 Plugin 'gmarik/vundle'
-Plugin 'airblade/vim-gitgutter'
+
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'austintaylor/vim-indentobject'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'juvenn/mustache.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'honza/vim-snippets'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'nono/vim-handlebars'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
+Plugin 'npm.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-bundler'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-pastie'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'eventualbuddha/vim-protobuf'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'tpope/vim-obsession'
-Plugin 'ahdinosaur-os/npm.vim'
-Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -111,6 +107,14 @@ let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 0
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
@@ -125,6 +129,8 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
+" ejs is html
+au BufNewFile,BufRead *.ejs set filetype=html
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
@@ -177,6 +183,9 @@ augroup filetype_scss
   " Convert 1 line selector to multiline
   " au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>c /{<cr>jji<cr><space><space><esc>/}<cr>i<bs><cr><esc>jO
 augroup END
+
+autocmd FileType scss set iskeyword+=-
+
 " json
 au BufRead,BufNewFile *.json set filetype=json
 

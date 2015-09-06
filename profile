@@ -1,4 +1,4 @@
-source  ~/.inputrc
+source  $HOME/.inputrc
 
 # Global Variables
 export PS1='\[\e[0;32m\]\W\[\e[m\] $ ';
@@ -17,16 +17,15 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~"
+alias ~="cd $HOME"
 alias -- -="cd -"
 
 # Shortcuts
 alias la="ls -Al"
-alias p="cd /mnt/Samba/Stephen/Mot/Portals"
-alias p1="p"
+alias p1="cd /mnt/Samba/Stephen/Mot/Portals"
 alias p2="cd /mnt/Samba/Stephen/Hai/Portals"
-alias c="cd ~/code"
-alias sysconfig="cd ~/.sysconfig"
+alias c="cd $HOME/code"
+alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # RVM Init
@@ -46,7 +45,7 @@ alias hp="harp init -b agencyrevolution/prototype-dnn#gh-pages"
 
 # Git/Hub
 eval "$(hub alias -s)"
-alias git="hub";
+alias git="hub"
 alias gs="git status"
 alias ga="git add -A"
 alias gc="git commit"
@@ -63,8 +62,11 @@ if [ -f `brew --prefix`/usr/local/etc/bash_completion.d ]; then
   . `brew --prefix`/usr/local/etc/bash_completion.d
 fi
 
+# Vim
+alias v="vim"
+
 # Tmux
-alias t="tmux";
+alias t="tmux"
 alias ta="tmux attach -d"
 alias ts="tmux attach -d -t"
 alias tl="tmux ls"
