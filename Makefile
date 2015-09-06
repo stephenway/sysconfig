@@ -5,8 +5,7 @@
 CONFIG    := ${PWD}
 VUNDLE    := ~/.vim/bundle/vundle.vim
 
-symlinks = config/fish \
-	bin \
+symlinks = bin \
 	gitconfig \
 	gitignore_global \
 	eslintrc \
@@ -23,7 +22,6 @@ symlinks = config/fish \
 
 directories = vim/bundle/ \
 	ssh/ \
-	config/ \
 
 .PHONY: $(directories)
 
@@ -56,7 +54,6 @@ help:
 	@echo "   $(COLOR)make all$(NO_COLOR)		Setup and install"
 
 setup: $(directories)
-	rm -rf ~/.config/fish
 	[ -d ${VUNDLE} ] || git clone 'https://github.com/VundleVim/Vundle.vim.git' ${VUNDLE}
 
 $(directories):
