@@ -3,7 +3,7 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-sudo gem install scss-lint
+sudo gem install scss_lint
 npm install -g babel
 npm install -g bower
 npm install -g browserify
