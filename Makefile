@@ -8,6 +8,7 @@ VUNDLE    := ~/.vim/bundle/vundle.vim
 symlinks = bin \
 	gitconfig \
 	gitignore_global \
+	gvimrc \
 	eslintrc \
 	inputrc \
 	jshintrc \
