@@ -134,6 +134,9 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+"check html
+map ,h5 :!html5check %<CR>
+
 " Fix Cursor in TMUX
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
