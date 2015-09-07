@@ -49,11 +49,14 @@ brew install woff2
 # Install other useful binaries.
 brew install ack
 brew install ctags
+brew install curl
 brew install fasd
 brew install git
+brew install git-extras
 brew install git-lfs
 brew install hub
 brew install imagemagick --with-webp
+brew install optipng
 brew install p7zip
 brew install reattach-to-user-namespace
 brew install rename
@@ -68,14 +71,17 @@ brew install zopfli
 # Install Cask and Applications
 brew install caskroom/cask/brew-cask
 brew cask install dropbox
-brew cask install java
 brew cask install firefox
+brew cask install karabiner
+brew cask insatll imagealpha
+brew cask insatll imageoptim
+brew cask install java
 brew cask install licecap
 brew cask install macvim
 brew cask install seil
-brew cask install karabiner
-brew cask install virtualbox
+brew cask install trim-enabler
 brew cask install vagrant
+brew cask install virtualbox
 
 # Remove outdated versions from the cellar.
 brew cleanup
