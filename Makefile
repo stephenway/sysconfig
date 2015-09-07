@@ -6,10 +6,11 @@ CONFIG    := ${PWD}
 VUNDLE    := ~/.vim/bundle/vundle.vim
 
 symlinks = bin \
+	editorconfig \
+	eslintrc \
 	gitconfig \
 	gitignore_global \
 	gvimrc \
-	eslintrc \
 	inputrc \
 	jshintrc \
 	profile \
