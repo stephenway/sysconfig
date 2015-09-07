@@ -15,6 +15,7 @@ sudo npm i -g ember-cli
 sudo npm i -g gulp
 sudo npm i -g harp
 sudo npm i -g imageoptim-cli
+sudo npm i -g perfbudget
 sudo npm i -g phantomcss
 sudo npm i -g phantomjs
 sudo npm i -g psi
