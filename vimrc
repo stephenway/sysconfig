@@ -247,7 +247,7 @@ nnoremap <Leader>l :Copen<cr>
 nnoremap <Leader>L :Copen!<cr>
 nnoremap <Leader>r :wa<cr>:Dispatch<cr>
 nnoremap <Leader>R :wa<cr>:Dispatch!<cr>
-autocmd BufEnter harp.json let b:dispatch = 'gulp';
+autocmd BufEnter harp.json let b:dispatch = 'gulp'
 autocmd BufEnter Gulpfile let b:dispatch = 'gulp dev'
 autocmd BufEnter Gruntfile let b:dispatch = 'grunt dev'
 autocmd FileType go let b:dispatch = 'go test'
