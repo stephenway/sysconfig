@@ -5,7 +5,9 @@
 CONFIG    := ${PWD}
 VUNDLE    := ~/.vim/bundle/vundle.vim
 
-symlinks = bin \
+symlinks = bash_profile \
+	bashrc \
+	bin \
 	editorconfig \
 	eslintrc \
 	gitconfig \
@@ -13,7 +15,6 @@ symlinks = bin \
 	gvimrc \
 	inputrc \
 	jshintrc \
-	profile \
 	scss-lint.yml \
 	ssh/config \
 	tmux \
