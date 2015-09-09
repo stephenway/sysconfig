@@ -22,13 +22,20 @@ if [ -f "$HOME/.localrc" ] ; then
   source $HOME/.localrc
 fi
 
+if [ -d "/usr/local/sbin" ] ; then
+  pathprepend /usr/local/sbin
+fi
+
 if [ -d "$HOME/bin" ] ; then
   pathprepend $HOME/bin
 fi
 
+if [ -d "$HOME/.rvm/bin" ] ; then
+  pathprepend $HOME/.rvm/bin
+fi
+
 # Personal environment variables
 export PS1='\[\e[0;32m\]\W\[\e[m\] $ ';
-export PATH="/usr/local/sbin:$HOME/bin:$HOME/.rvm/bin:$PATH";
 export EDITOR=vim;
 export BROWSER=open;
 export COMMAND_MODE=unix2003;
