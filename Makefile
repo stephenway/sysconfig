@@ -15,11 +15,11 @@ symlinks = bash_profile \
 	gvimrc \
 	inputrc \
 	jshintrc \
-	scss-lint.yml \
 	ssh/config \
 	tmux \
 	tmux.conf \
 	vimrc \
+	#scss-lint.yml \
 
 .PHONY: $(symlinks)
 
