@@ -92,3 +92,4 @@ alias bu="bower cache clean && bower update"
 # Misc
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reload="exec $SHELL -l"
+alias flush="sudo killall -HUP mDNSResponder"
