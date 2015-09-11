@@ -6,6 +6,15 @@
 # environment variables and startup programs are in /etc/profile.
 # System wide aliases and functions are in /etc/bashrc.
 
+pathprepend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
+
 if [ -f "$HOME/.inputrc" ] ; then
   source $HOME/.inputrc
 fi
