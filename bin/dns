@@ -1,0 +1,51 @@
+#! /bin/bash
+
+if [ -n "$1" ]; then
+
+echo ""
+echo "<----- Domain Results ----->"
+echo ""
+echo "Nameservers for $1:"
+
+dig ns $1 +short
+
+echo ""
+echo "IP address for $1:"
+
+dig $1 +short 
+
+echo ""
+echo "MX records for $1:"
+
+dig mx $1 +short 
+
+echo ""
+echo "IP address for MX records:"
+
+dig $(dig mx $1 +short) +short 
+
+whois $1 > ~/.whois.tmp
+
+echo ""
+echo "Important Dates:"
+grep Expiration ~/.whois.tmp
+grep "Updated Date:" ~/.whois.tmp
+
+echo ""
+echo "Administrative Contact:"
+awk '/Administrative\ Contact/ {getline; print}' ~/.whois.tmp
+
+echo ""
+echo "$1 Status:"
+grep -i "status:" ~/.whois.tmp
+
+rm ~/.whois.tmp
+
+echo ""
+echo "<----- End of Results ----->"
+echo ""
+
+else
+   echo "     I need a domain"
+   echo "     Usage: $0 DOMAIN.COM"
+fi

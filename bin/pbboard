@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for f in *.jpg; do
+  convert -units PixelsPerInch ./"$f" -density 72 ./"$f"
+done

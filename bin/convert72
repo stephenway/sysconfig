@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for f in *.jpg; do
+  if [ -f ./"$f" ]; then
+    convert -units PixelsPerInch ./"$f" -density 72 ./"$f"
+    echo "Derezzed $f"
+  else
+    echo "Failed to derez $f"
+  fi
+done
