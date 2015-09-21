@@ -53,6 +53,7 @@ export NODE_PATH="/usr/local/lib/node_modules";
 export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
+export DOCKER_HOST=tcp://localhost:4243
 
 # Personal startup programs
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
