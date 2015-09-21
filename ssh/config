@@ -3,7 +3,7 @@ Host *
   ServerAliveInterval 60
   ControlPath ~/.ssh/master-%r@%h:%p
   ControlMaster auto
-  ControlPersist 1h
+#  ControlPersist 2h
 
 
 # Personal
