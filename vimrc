@@ -10,17 +10,11 @@ call vundle#begin()
 " install Vundle bundles
 Plugin 'gmarik/vundle'
 
-Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'honza/vim-snippets'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'mxw/vim-jsx'
 Plugin 'npm.vim'
-Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -39,6 +33,25 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'vim-scripts/matchit.zip'
+
+" templating
+Plugin 'digitaltoad/vim-jade'
+Plugin 'mustache/vim-mustache-handlebars'
+
+" javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" sass
+Plugin 'cakebaker/scss-syntax.vim'
+
+" clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-salve'
 
 call vundle#end()
 
