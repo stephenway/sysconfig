@@ -23,8 +23,9 @@ symlinks = bash_profile \
 
 .PHONY: $(symlinks)
 
-directories = vim/bundle/ \
+directories = bash_completion.d \
 	ssh/ \
+	vim/bundle/ \
 
 .PHONY: $(directories)
 

@@ -43,8 +43,26 @@ if [ -d "$HOME/.rvm/bin" ] ; then
   pathprepend $HOME/.rvm/bin
 fi
 
+if [ -d "$HOME/projects/team/scripts" ] ; then
+  pathprepend $HOME/projects/team/scripts
+fi
+
+# Personal startup programs
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
+eval "$(hub alias -s)"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
+    source "$HOME/bash_completion.d/git-flow-completion.bash"
+  fi
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+
 # Personal environment variables
-export PS1='\[\e[0;32m\]\W\[\e[m\] $ ';
+export PS1='\[\e[0;32m\]\W\[\e[m\]$(__git_ps1) $ ';
 export EDITOR=vim;
 export BROWSER=open;
 export COMMAND_MODE=unix2003;
@@ -55,12 +73,3 @@ export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 export DOCKER_HOST=tcp://localhost:4243
 
-# Personal startup programs
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
-eval "$(hub alias -s)"
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f `brew --prefix`/usr/local/etc/bash_completion.d ]; then
-    . `brew --prefix`/usr/local/etc/bash_completion.d
-  fi
-fi

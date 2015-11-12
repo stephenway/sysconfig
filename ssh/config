@@ -37,25 +37,12 @@ Host server
 # Business
 # ========================
 
-Host revblog
-  HostName wordpress1
-  User stephen.way
-
-Host revblog2
-  HostName 52.26.19.96
-  User ubuntu
-  IdentityFile "~/.ssh/arblog.pem"
-
-Host revblogs
-  HostName 64.13.226.157
-  User root
-  IdentityFile "~/.ssh/dv.pem"
-
-Host revweb
-  HostName webteam1
-  User stephen.way
-  IdentityFile "~/.ssh/stephen.way.pem"
-
+Host gitlab
+  HostName gitlab.buehner-fry.com
+  User SCWay
+  RSAAuthentication yes
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
 
 # Clients
 # ========================

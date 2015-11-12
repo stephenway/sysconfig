@@ -36,8 +36,6 @@ fi
 
 # Shortcuts
 alias la="ls -Al"
-alias p1="cd /mnt/Samba/Stephen/Mot/Portals"
-alias p2="cd /mnt/Samba/Stephen/Hai/Portals"
 alias c="cd $HOME/code"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
@@ -95,3 +93,7 @@ alias bu="bower cache clean && bower update"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reload="exec $SHELL -l"
 alias flush="sudo killall -HUP mDNSResponder"
+
+# Clojure
+alias fw='rlwrap lein figwheel'
+

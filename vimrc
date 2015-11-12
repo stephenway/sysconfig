@@ -42,7 +42,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-" sass
+" css
+Plugin 'stephenway/postcss.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 
 " clojure
