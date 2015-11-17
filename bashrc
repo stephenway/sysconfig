@@ -97,3 +97,5 @@ alias flush="sudo killall -HUP mDNSResponder"
 # Clojure
 alias fw='rlwrap lein figwheel'
 
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV"

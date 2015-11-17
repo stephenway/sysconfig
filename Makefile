@@ -3,7 +3,6 @@
 
 .DEFAULT_GOAL := all
 CONFIG    := ${PWD}
-VUNDLE    := ~/.vim/bundle/vundle.vim
 
 symlinks = bash_profile \
 	bashrc \
@@ -58,7 +57,9 @@ help:
 	@echo "   $(COLOR)make all$(NO_COLOR)		Setup and install"
 
 setup: $(directories)
-	[ -d ${VUNDLE} ] || git clone 'https://github.com/VundleVim/Vundle.vim.git' ${VUNDLE}
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	vim +PlugInstall +qa
 
 $(directories):
 	mkdir -p ~/.$@

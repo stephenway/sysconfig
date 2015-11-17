@@ -4,57 +4,55 @@ set nocompatible
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-" install Vundle bundles
-Plugin 'gmarik/vundle'
+" install bundles
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
-Plugin 'npm.vim'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-pastie'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-scripts/greplace.vim'
-Plugin 'vim-scripts/matchit.zip'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'honza/vim-snippets'
+Plug 'kien/ctrlp.vim'
+Plug 'npm.vim'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-pastie'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/greplace.vim'
+Plug 'vim-scripts/matchit.zip'
 
 " templating
-Plugin 'digitaltoad/vim-jade'
-Plugin 'mustache/vim-mustache-handlebars'
+Plug 'digitaltoad/vim-jade'
+Plug 'mustache/vim-mustache-handlebars'
 
 " javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " css
-Plugin 'stephenway/postcss.vim'
-Plugin 'cakebaker/scss-syntax.vim'
+Plug 'stephenway/postcss.vim'
+Plug 'cakebaker/scss-syntax.vim'
 
 " clojure
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-salve'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
 
-call vundle#end()
+call plug#end()
 
 " enable syntax highlighting
 syntax enable
