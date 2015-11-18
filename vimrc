@@ -10,47 +10,43 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'honza/vim-snippets'
-Plug 'kien/ctrlp.vim'
-Plug 'npm.vim'
-Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'kien/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMixed'] }
+Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
-Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch', { 'on': ['Compiler', 'Make', 'Dispatch', 'Focus', 'Start', 'Copen'] }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-pastie'
-Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-obsession', { 'on': 'Obsess' }
+Plug 'tpope/vim-pastie', { 'on': 'Pastie' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/Align'
-Plug 'vim-scripts/greplace.vim'
 Plug 'vim-scripts/matchit.zip'
 
 " templating
-Plug 'digitaltoad/vim-jade'
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'digitaltoad/vim-jade', { 'for': 'jade' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'hbs' }
 
 " javascript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 
 " css
-Plug 'stephenway/postcss.vim'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'stephenway/postcss.vim', { 'for': 'css' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 
 " clojure
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
 
 call plug#end()
 
