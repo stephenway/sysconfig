@@ -67,7 +67,7 @@ alias gm="git merge"
 alias bub="GITHUB_HOST=bitbucket.com git"
 
 # Vim
-alias v='f -e vim' # quick opening files with vim
+alias v="f -e vim" # quick opening files with vim
 
 # Tmux
 alias t="tmux"
@@ -95,7 +95,8 @@ alias reload="exec $SHELL -l"
 alias flush="sudo killall -HUP mDNSResponder"
 
 # Clojure
-alias fw='rlwrap lein figwheel'
+alias fw="rlwrap lein figwheel"
+alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
 
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV"
