@@ -61,10 +61,19 @@ alias gb="git branch"
 alias gd="git diff"
 alias gco="git checkout"
 alias gp="git push"
-alias gl="git pull"
+alias gP="git pull"
+alias gl="git log"
 alias gt="git tag"
 alias gm="git merge"
 alias bub="GITHUB_HOST=bitbucket.com git"
+
+# Git-flow
+alias gf="git flow"
+alias gfi="git flow init -d"
+alias gff="git flow feature"
+alias gfr="git flow release"
+alias gfh="git flow hotfix"
+alias gfs="git flow support"
 
 # Vim
 alias v="f -e vim" # quick opening files with vim
