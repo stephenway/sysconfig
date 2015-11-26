@@ -3,7 +3,6 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-sudo gem i scss_lint
 sudo npm i -g babel
 sudo npm i -g bower
 sudo npm i -g browserify

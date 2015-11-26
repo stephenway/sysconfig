@@ -18,7 +18,6 @@ symlinks = bash_profile \
 	tmux \
 	tmux.conf \
 	vimrc \
-	#scss-lint.yml \
 
 .PHONY: $(symlinks)
 
