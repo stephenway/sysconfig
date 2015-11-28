@@ -274,9 +274,9 @@ autocmd BufEnter Gemfile let b:dispatch = 'bundle'
 autocmd BufEnter webpack.*.js let b:dispatch = 'npm start'
 
 " Fugitive
-nnoremap <Leader>w :Gwrite<cr>
-nnoremap <Leader>c :Gcommit<cr>
-nnoremap <Leader>s :Gstatus<cr>
+nnoremap <Leader>W :Gwrite<cr>
+nnoremap <Leader>C :Gcommit<cr>
+nnoremap <Leader>S :Gstatus<cr>
 nnoremap <Leader>p :Git push<cr>
 nnoremap <Leader>P :Git pull --rebase<cr>
 
