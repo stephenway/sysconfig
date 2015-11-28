@@ -2,3 +2,4 @@
 .log
 fish_history
 local.fish
+*.swp
