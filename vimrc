@@ -20,15 +20,14 @@ Plug 'chriskempson/base16-vim'
 Plug 'kana/vim-textobj-user'
 Plug 'reedes/vim-textobj-quote'
 Plug 'mjakl/vim-asciidoc'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'stephenway/postcss.vim'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-salve'
 Plug 'kien/rainbow_parentheses.vim'
-
 call plug#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
