@@ -3,6 +3,7 @@
 # Ask for the administrator password upfront.
 sudo -v
 
+sudo npm i -g a11y
 sudo npm i -g babel
 sudo npm i -g bower
 sudo npm i -g browserify
