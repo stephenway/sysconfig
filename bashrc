@@ -126,5 +126,3 @@ alias flush="sudo killall -HUP mDNSResponder"
 alias fw="rlwrap lein figwheel"
 alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
 
-# Hook for desk activation
-[ -n "$DESK_ENV" ] && source "$DESK_ENV"
