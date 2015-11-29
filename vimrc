@@ -9,7 +9,8 @@ set nocompatible
 inoremap jk <ESC>
 
 " leader is space
-let mapleader = '\<Space>'
+" let mapleader = "\<Space>"
+let mapleader = ","
 
 " configure plugin manager
 filetype off
@@ -60,6 +61,14 @@ augroup textobj_quote
   autocmd FileType textile call textobj#quote#init()
   autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
+
+call textobj#user#plugin('css', {
+                        \   'code': {
+                        \     'pattern': ['{', '}'],
+                        \     'select-a': 'aP',
+                        \     'select-i': 'iP',
+                        \   },
+                        \ })
 
 " Evaluate Clojure buffers on load
 autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
