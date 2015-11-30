@@ -63,6 +63,7 @@
 	wdiff = diff --color-words
 	wip = "!$EDITOR $(git ls-files -m)"
 	mypulls = browse -- pulls/stephenway
+	personal = config user.email \"way.stephen@gmail.com\"
 
 [core]
 	excludesfile = ~/.gitignore_global

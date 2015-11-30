@@ -20,6 +20,7 @@ sudo npm i -g phantomcss
 sudo npm i -g phantomjs
 sudo npm i -g psi
 sudo npm i -g slimerjs
+sudo npm i -g updtrs
 sudo npm i -g vtop
 sudo npm i -g webpack
 sudo npm i -g webpack-dev-server
