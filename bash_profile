@@ -61,8 +61,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
+# Git Prompt Logic
+function parse_git_dirty() {
+[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "+"
+}
+ 
+function parse_git_branch() {
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
 # Personal environment variables
-export PS1='\[\e[0;32m\]\W\[\e[m\]$(__git_ps1) $ ';
+export PS1='\[\e[0;32m\]\w\[\033[35m\]:$(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
 export EDITOR=vim;
 export BROWSER=open;
 export COMMAND_MODE=unix2003;
