@@ -48,6 +48,9 @@ if [ -d "$HOME/projects/team/scripts" ] ; then
 fi
 
 # Personal startup programs
+if [ -f "/usr/bin/local/desk" ]; then
+        source /usr/bin/local/desk
+fi
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
 eval "$(hub alias -s)"
@@ -59,6 +62,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     source "$HOME/bash_completion.d/git-flow-completion.bash"
   fi
 fi
+
+# export DOCKER_TLS_VERIFY="1"
+# export DOCKER_HOST="tcp://192.168.99.100:2376"
+# export DOCKER_CERT_PATH="~/.docker/machine/machines/default"
+# export DOCKER_MACHINE_NAME="default"
+# eval $(docker-machine env default)
+
 GIT_PS1_SHOWDIRTYSTATE=true
 
 # Git Prompt Logic
