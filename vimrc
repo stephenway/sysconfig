@@ -74,10 +74,11 @@ call textobj#user#plugin('css', {
 autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
 
 " setup clojure rainbow highlighting
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax clojure RainbowParenthesesLoadRound
-au Syntax clojure RainbowParenthesesLoadSquare
-au Syntax clojure RainbowParenthesesLoadBraces
+" au Syntax clojure RainbowParenthesesLoadSquare
+" au Syntax clojure RainbowParenthesesLoadBraces
 
 " Enable basic mouse behavior such as resizing buffers.
 if exists('$TMUX')  " Support resizing in tmux
