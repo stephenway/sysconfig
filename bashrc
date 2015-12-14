@@ -121,6 +121,9 @@ alias bu="bower cache clean && bower update"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reload="exec $SHELL -l"
 alias flush="sudo killall -HUP mDNSResponder"
+alias docker-init="eval '$(docker-machine env default)'"
+alias docker-up="docker-machine start default"
+alias d.="desk ."
 
 # Clojure
 alias fw="rlwrap lein figwheel"
