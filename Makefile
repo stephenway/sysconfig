@@ -19,6 +19,10 @@ symlinks = bash_profile \
 	tmux.conf \
 	vimrc \
 
+nvim:
+	ln -s ~/.vim ~/.config/nvim
+	ln -s ~/.vimrc ~/.config/nvim/init.vim
+
 .PHONY: $(symlinks)
 
 directories = bash_completion.d \
