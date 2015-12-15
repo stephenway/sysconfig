@@ -96,6 +96,8 @@ alias gfs="git flow support"
 
 # Vim
 alias v="f -e vim" # quick opening files with vim
+alias vim="nvim"
+alias nim="nvim"
 
 # Tmux
 alias t="tmux"
