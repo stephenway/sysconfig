@@ -13,6 +13,12 @@ fi
 
 # Personal aliases
 
+# Enable sudo in aliases
+alias sudo="sudo "
+
+# Reload Shell
+alias reload="exec $SHELL -l"
+
 # Traversing
 alias ..="cd .."
 alias ...="cd ../.."
@@ -37,20 +43,13 @@ fi
 # Shortcuts
 alias la="ls -Al"
 alias c="cd $HOME/code"
+alias p="cd $HOME/projects"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
-
-# Sudo Aliases
-alias sudo="sudo "
 
 # Gulp
 alias g="gulp"
 alias gbw="gulp build-watch"
-
-# Harp
-alias h="harp"
-alias hb="harp init -b"
-alias hp="harp init -b agencyrevolution/prototype-dnn#gh-pages"
 
 # Git/Hub
 alias git="hub"
@@ -113,21 +112,33 @@ alias nl="npm list --depth=0 2>/dev/null"
 # Updating
 alias um="sudo softwareupdate -i -a"
 alias ub="brew update && brew upgrade --all && brew cleanup && brew doctor"
-alias uv="vim +PluginUpdate +qall"
+alias uv="vim +PlugUpdate +qall"
 alias un="sudo npm update -g"
 alias up="ub && uv && un && reset"
 alias nu="npm cache clean && npm update"
 alias bu="bower cache clean && bower update"
 
-# Misc
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias reload="exec $SHELL -l"
-alias flush="sudo killall -HUP mDNSResponder"
-alias docker-init="eval '$(docker-machine env default)'"
-alias docker-up="docker-machine start default"
-alias d.="desk ."
-
 # Clojure
 alias fw="rlwrap lein figwheel"
 alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
+
+# Docker
+alias docker-init="eval '$(docker-machine env default)'"
+alias docker-up="docker-machine start default"
+
+# Misc
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias flush="sudo killall -HUP mDNSResponder"
+alias d.="desk ."
+
+# Personal functions
+
+# Git Prompt Logic
+function parse_git_dirty() {
+[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "+"
+}
+ 
+function parse_git_branch() {
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
 
