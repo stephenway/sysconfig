@@ -47,40 +47,9 @@ if [ -d "$HOME/projects/team/scripts" ] ; then
   pathprepend $HOME/projects/team/scripts
 fi
 
-# Personal startup programs
-if [ -f "/usr/bin/local/desk" ]; then
-        source /usr/bin/local/desk
-fi
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
-eval "$(hub alias -s)"
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
-    source "$HOME/bash_completion.d/git-flow-completion.bash"
-  fi
-fi
-
-# export DOCKER_TLS_VERIFY="1"
-# export DOCKER_HOST="tcp://192.168.99.100:2376"
-# export DOCKER_CERT_PATH="~/.docker/machine/machines/default"
-# export DOCKER_MACHINE_NAME="default"
-# eval $(docker-machine env default)
+# Personal environment variables
 
 GIT_PS1_SHOWDIRTYSTATE=true
-
-# Git Prompt Logic
-function parse_git_dirty() {
-[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "+"
-}
- 
-function parse_git_branch() {
-git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-}
-
-# Personal environment variables
 export PS1='\[\e[0;32m\]\w\[\033[35m\]:$(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
 export EDITOR=vim;
 export BROWSER=open;
@@ -91,4 +60,30 @@ export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 export DOCKER_HOST=tcp://localhost:4245
+
+# Personal startup programs
+
+# Desk
+if [ -f "/usr/bin/local/desk" ]; then
+        source /usr/bin/local/desk
+fi
+
+# SSH
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
+
+# Hub
+eval "$(hub alias -s)"
+
+# Git Completion
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
+    source "$HOME/bash_completion.d/git-flow-completion.bash"
+  fi
+fi
 
