@@ -19,10 +19,6 @@ symlinks = bash_profile \
 	tmux.conf \
 	vimrc \
 
-nvim:
-	ln -s ~/.vim ~/.config/nvim
-	ln -s ~/.vimrc ~/.config/nvim/init.vim
-
 .PHONY: $(symlinks)
 
 directories = bash_completion.d \
@@ -56,6 +52,7 @@ help:
 	@echo "   $(COLOR)make check-dead$(NO_COLOR)	Find dead symlinks"
 	@echo "   $(COLOR)make clean-dead$(NO_COLOR)	Delete dead symlinks"
 	@echo "   $(COLOR)make update$(NO_COLOR)		Update sysconfig"
+	@echo "   $(COLOR)make nvim$(NO_COLOR)		Enable nvim support"
 	@echo
 	@echo "   $(COLOR)make all$(NO_COLOR)		Setup and install"
 
@@ -82,3 +79,11 @@ clean-dead:
 
 update:
 	git pull --rebase
+
+nvim:
+	ln -s ~/.vim ~/.config/nvim
+	ln -s ~/.vimrc ~/.config/nvim/init.vim
+
+iterm:
+	open ./iterm-atelier-ocean.itermcolors
+
