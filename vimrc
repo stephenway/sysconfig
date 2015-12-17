@@ -1,6 +1,10 @@
-" vimrc
-" -----
-" Know what every line does, and remove what you do not.
+" .vimrc for sysconfig
+
+" Personal plugins and settings.
+
+" Know what every line does, and remove what you do not. The less you add to
+" this file, the more you will begin to understand how vi works. If you see a
+" plugin, search how you can do the same thing in vi without plugins first.
 
 " turn off vi compatibility
 set nocompatible
@@ -9,8 +13,7 @@ set nocompatible
 inoremap jk <ESC>
 
 " leader is space
-" let mapleader = "\<Space>"
-let mapleader = ","
+let mapleader = "\<space>"
 
 " configure plugin manager
 filetype off
@@ -87,3 +90,5 @@ if exists('$TMUX')  " Support resizing in tmux
         endif
 endif
 
+" write file with leader
+nnoremap <Leader>w :w<CR>
