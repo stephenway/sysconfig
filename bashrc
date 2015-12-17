@@ -19,13 +19,18 @@ alias sudo="sudo "
 # Reload Shell
 alias reload="exec $SHELL -l"
 
-# Traversing
+# Directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd $HOME"
 alias -- -="cd -"
+alias la="ls -Al"
+alias c="cd $HOME/code"
+alias p="cd $HOME/projects"
+alias sysconfig="cd $HOME/.sysconfig"
+alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # Fasd
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -39,13 +44,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias z='fasd_cd -d'     # cd, same functionality as j in autojump
   alias zz='fasd_cd -d -i' # cd with interactive selection
 fi
-
-# Shortcuts
-alias la="ls -Al"
-alias c="cd $HOME/code"
-alias p="cd $HOME/projects"
-alias sysconfig="cd $HOME/.sysconfig"
-alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # Gulp
 alias g="gulp"
@@ -105,7 +103,7 @@ alias ts="tmux attach -d -t"
 alias tl="tmux ls"
 
 # NPM
-alias nin="sudo npm install --no-bin-links"
+alias nu="npm clean cache; npm update; npm outdated"
 alias ng="npm list -g --depth=0 2>/dev/null"
 alias nl="npm list --depth=0 2>/dev/null"
 
