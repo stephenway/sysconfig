@@ -6,6 +6,8 @@
 # environment variables and startup programs are in /etc/profile.
 # System wide aliases and functions are in /etc/bashrc.
 
+# Personal startup programs
+
 pathprepend() {
   for ARG in "$@"
   do
@@ -15,22 +17,6 @@ pathprepend() {
   done
 }
 
-if [ -f "$HOME/.inputrc" ] ; then
-  source $HOME/.inputrc
-fi
-
-if [ -f "$HOME/.bashrc" ] ; then
-  source $HOME/.bashrc
-fi
-
-if [ -f "$HOME/.nvm/nvm.sh" ] ; then
-  source $HOME/.nvm/nvm.sh
-fi
-
-if [ -f "$HOME/.localrc" ] ; then
-  source $HOME/.localrc
-fi
-
 if [ -d "/usr/local/sbin" ] ; then
   pathprepend /usr/local/sbin
 fi
@@ -39,12 +25,37 @@ if [ -d "$HOME/bin" ] ; then
   pathprepend $HOME/bin
 fi
 
-if [ -d "$HOME/.rvm/bin" ] ; then
-  pathprepend $HOME/.rvm/bin
+if [ -f "$HOME/.inputrc" ] ; then
+  source $HOME/.inputrc
 fi
 
-if [ -d "$HOME/projects/team/scripts" ] ; then
-  pathprepend $HOME/projects/team/scripts
+if [ -f "$HOME/.bashrc" ] ; then
+  source $HOME/.bashrc
+fi
+
+if [ -f "$HOME/.localrc" ] ; then
+  source $HOME/.localrc
+fi
+
+# Desk
+if [ -f "/usr/bin/local/desk" ]; then
+  source /usr/bin/local/desk
+fi
+
+# SSH
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Hub
+eval "$(hub alias -s)"
+
+# Git Completion
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
+    source "$HOME/bash_completion.d/git-flow-completion.bash"
+  fi
 fi
 
 # Personal environment variables
@@ -60,30 +71,4 @@ export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 export DOCKER_HOST=tcp://localhost:4245
-
-# Personal startup programs
-
-# Desk
-if [ -f "/usr/bin/local/desk" ]; then
-        source /usr/bin/local/desk
-fi
-
-# SSH
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a alias*
-
-# Hub
-eval "$(hub alias -s)"
-
-# Git Completion
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
-    source "$HOME/bash_completion.d/git-flow-completion.bash"
-  fi
-fi
 
