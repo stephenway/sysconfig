@@ -92,3 +92,4 @@ endif
 
 " write file with leader
 nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
