@@ -65,6 +65,7 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 	wdiff = diff --color-words
 	wip = "!$EDITOR $(git ls-files -m)"
+        wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 	mypulls = browse -- pulls/stephenway
 	personal = config user.email \"way.stephen@gmail.com\"
         # Emoji commits
