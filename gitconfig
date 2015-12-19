@@ -18,12 +18,15 @@
 	untracked = cyan
 
 [alias]
+        amend = commit -a --amend
 	br = branch
 	# show all branches, even across remotes
 	branches = branch -a --color -v
 	# remove all local branches included in the current branch
 	cleanup = !sh -c 'git branch --merged | grep -E "^[^*]" --exclude "^\\s*master" | xargs -n1 git branch -d'
 	co = checkout
+        cob = checkout -b
+        cm = !git add -A && git commit -m
 	ctags = !.git/hooks/ctags
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
@@ -48,11 +51,13 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"tags = tag -l
 	# track a remote branch
 	track = checkout -t
+        save = !git add -A && git commit -m 'SAVEPOINT'
 	st = status
 	# update all submodules
 	subs = submodule foreach git pull origin master
 	# clean up fully merged branches
 	sweep = !git-sweep
+        undo = reset HEAD~1 --mixed
 	# list only untracked files
 	untracked = ls-files --others --exclude-standard
 	# remove a file from the index
