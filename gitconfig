@@ -35,9 +35,7 @@
 	hash = rev-parse --short HEAD
 	lc = log ORIG_HEAD.. --stat --no-merges
 	# just for fun
-	l33t = !"git shortlog | l33t"
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
 	mybranches = "!f() { if test $# = 0 ; then set -- refs/remotes ; fi ; git for-each-ref --format='%(authordate:relative)\t%(refname:short)\t%(authoremail)' --sort=authordate \"$@\" | sed -ne \"s/\t<$(git config user.email)>//p\" | column -s '\t' -t ; } ; f"
 	# Find FIXME, TODO, etc, optimized by @x3ro https://gist.github.com/3908985
@@ -64,6 +62,14 @@
 	wip = "!$EDITOR $(git ls-files -m)"
 	mypulls = browse -- pulls/stephenway
 	personal = config user.email \"way.stephen@gmail.com\"
+        # Emoji commits
+        initial = !bash -c 'git commit -m \":sunrise: $0\"'
+        # Git-flow
+        finit = flow init -d
+        feature = !bash -c 'git flow feature $0'
+        release = !bash -c 'git flow release $0'
+        hotfix = !bash -c 'git flow hotfix $0'
+        support = !bash -c 'git flow support $0'
 
 [core]
 	excludesfile = ~/.gitignore_global
