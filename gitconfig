@@ -125,15 +125,3 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-[user]
-	name = Stephen Way
-	email = scway@thenavisway.com
-[commit]
-	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
-[github]
-	user = stephenway
-[url "git@gitlab.buehner-fry.com:"]
-	insteadOf = gl:
-	pushInsteadOf = git://gitlab.buehner-fry.com/
-[url "git://gitlab.buehner-fry.com/"]
-	insteadOf = gitlab:
