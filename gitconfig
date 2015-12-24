@@ -69,9 +69,9 @@
 	wip = "!$EDITOR $(git ls-files -m)"
         wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 	mypulls = browse -- pulls/stephenway
-	personal = config user.email \"way.stephen@gmail.com\"
+	personal = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
         # Emoji commits
-        initial = !bash -c 'git commit -m \":sunrise: $0\"'
+        initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
         # Git-flow
         finit = flow init -d
         feature = !bash -c 'git flow feature $0'
@@ -125,3 +125,15 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[user]
+	name = Stephen Way
+	email = scway@thenavisway.com
+[commit]
+	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
+[github]
+	user = stephenway
+[url "git@gitlab.buehner-fry.com:"]
+	insteadOf = gl:
+	pushInsteadOf = git://gitlab.buehner-fry.com/
+[url "git://gitlab.buehner-fry.com/"]
+	insteadOf = gitlab:
