@@ -51,8 +51,9 @@ alias gbw="gulp build-watch"
 
 # Git/Hub
 alias git="hub"
-alias gs="git status"
-alias gss="git status -s"
+alias gss="git status"
+alias gs="git status -s"
+alias gsa= "git-multi-status"
 alias ga="git add"
 alias gA="git add -A"
 alias gaa="git add ."
