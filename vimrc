@@ -43,16 +43,20 @@ set background=dark
 colorscheme base16-default
 
 " setup basic encoding
-set encoding=utf-8
+if !has('nvim')
+        set encoding=utf-8
+endif
 
 " no folds
 let g:vim_asciidoc_folding_disabled=0
 
-" set spaces for css
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
+" set spaces
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
-" expand tabs to spaces
-set expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 
 " don't put an extra space after a period with j commands
 set nojoinspaces
