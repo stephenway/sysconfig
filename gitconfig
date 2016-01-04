@@ -18,17 +18,17 @@
 	untracked = cyan
 
 [alias]
-        amend = commit -a --amend
+	amend = commit -a --amend
 	br = branch
 	# show all branches, even across remotes
 	branches = branch -a --color -v
-        bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-        bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"<Paste>
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"<Paste>
 	# remove all local branches included in the current branch
 	cleanup = !sh -c 'git branch --merged | grep -E "^[^*]" --exclude "^\\s*master" | xargs -n1 git branch -d'
 	co = checkout
-        cob = checkout -b
-        cm = !git add -A && git commit -m
+	cob = checkout -b
+	cm = !git add -A && git commit -m
 	ctags = !.git/hooks/ctags
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
@@ -53,13 +53,13 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"tags = tag -l
 	# track a remote branch
 	track = checkout -t
-        save = !git add -A && git commit -m 'SAVEPOINT'
+	save = !git add -A && git commit -m 'SAVEPOINT'
 	st = status
 	# update all submodules
 	subs = submodule foreach git pull origin master
 	# clean up fully merged branches
 	sweep = !git-sweep
-        undo = reset HEAD~1 --mixed
+	undo = reset HEAD~1 --mixed
 	# list only untracked files
 	untracked = ls-files --others --exclude-standard
 	# remove a file from the index
@@ -67,17 +67,17 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 	wdiff = diff --color-words
 	wip = "!$EDITOR $(git ls-files -m)"
-        wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 	mypulls = browse -- pulls/stephenway
 	personal = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
-        # Emoji commits
-        initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
-        # Git-flow
-        finit = flow init -d
-        feature = !bash -c 'git flow feature $0'
-        release = !bash -c 'git flow release $0'
-        hotfix = !bash -c 'git flow hotfix $0'
-        support = !bash -c 'git flow support $0'
+	# Emoji commits
+	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
+	# Git-flow
+	finit = flow init -d
+	feature = flow feature
+	release = flow release
+	hotfix = flow hotfix
+	support = flow support
 
 [core]
 	excludesfile = ~/.gitignore_global
