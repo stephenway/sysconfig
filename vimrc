@@ -57,6 +57,8 @@ set tabstop=2
 
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType clojure setlocal ts=2 sts=2 sw=2 expandtab
+let g:clojure_fuzzy_indent_patterns = ['.']
 
 " don't put an extra space after a period with j commands
 set nojoinspaces
@@ -94,6 +96,10 @@ if exists('$TMUX')  " Support resizing in tmux
         endif
 endif
 
-" write file with leader
+cabbrev tq tabclose<CR>
+
+" leader commands
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
+nnoremap <Leader>/ 0i/*<Space><Esc>A<Space>*/<Esc>0<CR>
+nnoremap <Leader>' %s/"\([^']*\)"/'\1'/g
