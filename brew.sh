@@ -40,6 +40,9 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install homebrew/php/php55 --with-gmp
 
+# Mac App Store CLI
+brew install argon/mas/mas
+
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
