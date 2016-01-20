@@ -18,6 +18,7 @@ sudo npm i -g gulp
 sudo npm i -g harp
 sudo npm i -g imageoptim-cli
 sudo npm i -g jsonlint
+sudo npm i -g nativefier
 sudo npm i -g pakmanager
 sudo npm i -g perfbudget
 sudo npm i -g phantomcss
