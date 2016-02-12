@@ -71,6 +71,7 @@ alias gdt="git difftool"
 alias gco="git checkout"
 alias gup="git fetch && git rebase"
 alias gp="git push"
+alias gpa="git push --all"
 alias gpo="git push -u origin"
 alias gpp="git pull --rebase && git push"
 alias gP="git pull --rebase"
@@ -122,8 +123,8 @@ alias fw="rlwrap lein figwheel"
 alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
 
 # Docker
-alias docker-init="eval '$(docker-machine env default)'"
-alias docker-up="docker-machine start default"
+# alias docker-init="eval '$(docker-machine env default)'"
+# alias docker-up="docker-machine start default"
 
 # Misc
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
