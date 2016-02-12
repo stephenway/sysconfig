@@ -66,6 +66,7 @@ brew install rename
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install the_silver_searcher
+brew install tig
 brew install tree
 brew install tmux
 brew install webkit2png
