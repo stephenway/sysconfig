@@ -21,17 +21,20 @@ filetype off
 " install plugins
 call plug#begin('~/.vim/bundle')
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'rking/ag.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'reedes/vim-textobj-quote'
 Plug 'mjakl/vim-asciidoc'
-Plug 'stephenway/postcss.vim'
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-salve'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'stephenway/postcss.vim', { 'for': 'css' }
+Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'luochen1990/rainbow'
 call plug#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
@@ -49,6 +52,9 @@ endif
 
 " no folds
 let g:vim_asciidoc_folding_disabled=0
+
+" ag
+let g:ag_working_path_mode="r"
 
 " set spaces
 set shiftwidth=2
@@ -83,11 +89,7 @@ call textobj#user#plugin('css', {
 autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
 
 " setup clojure rainbow highlighting
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax clojure RainbowParenthesesLoadRound
-" au Syntax clojure RainbowParenthesesLoadSquare
-" au Syntax clojure RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
 
 " Enable basic mouse behavior such as resizing buffers.
 if exists('$TMUX')  " Support resizing in tmux
@@ -103,3 +105,5 @@ nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
 nnoremap <Leader>/ 0i/*<Space><Esc>A<Space>*/<Esc>0<CR>
 nnoremap <Leader>' %s/"\([^']*\)"/'\1'/g
+nnoremap <Leader>a :Ag<space>
+
