@@ -12,6 +12,7 @@ sudo npm i -g browser-sync
 sudo npm i -g casperjs
 sudo npm i -g cli-github
 sudo npm i -g component
+sudo npm i -g diff-so-fancy
 sudo npm i -g eslint
 sudo npm i -g ghcal
 sudo npm i -g gulp
