@@ -25,6 +25,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rking/ag.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'reedes/vim-textobj-quote'
+Plug 'stephenway/vim-textobj-css', {'for': 'css' }
 Plug 'mjakl/vim-asciidoc'
 Plug 'stephenway/postcss.vim', { 'for': 'css' }
 Plug 'tpope/vim-classpath', { 'for': 'clojure' }
@@ -35,6 +36,7 @@ Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'luochen1990/rainbow'
+Plug 'jceb/vim-orgmode'
 call plug#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
