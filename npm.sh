@@ -6,6 +6,7 @@ sudo -v
 sudo npm i -g a11y
 sudo npm i -g autoprefixer
 sudo npm i -g babel
+sudo npm i -g babel-eslint
 sudo npm i -g bower
 sudo npm i -g browserify
 sudo npm i -g browser-sync
@@ -14,6 +15,7 @@ sudo npm i -g cli-github
 sudo npm i -g component
 sudo npm i -g diff-so-fancy
 sudo npm i -g eslint
+sudo npm i -g eslint-plugin-react
 sudo npm i -g ghcal
 sudo npm i -g gulp
 sudo npm i -g harp
