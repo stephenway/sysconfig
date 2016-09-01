@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e -u
+
+# Created publish-local script that publish the repo to your ~/.m2/repository
+# using your projects name and current version
+# It assumes that you are:
+# - in the same directory as the project.clj
+# - the project name and version string are on the first line
+
+project_name=$(head -n 1 project.clj | cut -d' ' -f2)
+simple_project_name=$(echo $project_name | sed 's/.*\///')
+version=$(head -n 1 project.clj | cut -d' ' -f3 | sed 's/"//g')
+
+lein jar
+lein pom
+lein localrepo install -p pom.xml \
+         target/${simple_project_name}-${version}.jar \
+         ${project_name} ${version}
