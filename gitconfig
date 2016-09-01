@@ -137,4 +137,5 @@
 [url "git://gitlab.buehner-fry.com/"]
 	insteadOf = gitlab:
 [commit]
+template = commit-msg
 #	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
