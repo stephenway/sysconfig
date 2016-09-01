@@ -9,6 +9,7 @@ symlinks = bash_profile \
 	bin \
 	editorconfig \
 	eslintrc \
+  git-templates \
 	gitconfig \
 	gitignore_global \
 	gvimrc \
