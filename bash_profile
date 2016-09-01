@@ -17,6 +17,10 @@ pathprepend() {
   done
 }
 
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+  . $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
 if [ -d "/usr/local/sbin" ] ; then
   pathprepend /usr/local/sbin
 fi
