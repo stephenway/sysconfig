@@ -129,6 +129,7 @@
 [user]
 	name = Stephen Way
 	email = scway@thenavisway.com
+  signingkey = A2E19EAB1756C132
 [github]
 	user = stephenway
 [url "git@gitlab.buehner-fry.com:"]
@@ -145,3 +146,7 @@
   hotfix = hotfix/
   support = support/
   versiontag = v
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
