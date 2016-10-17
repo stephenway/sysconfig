@@ -130,6 +130,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias flush="sudo killall -HUP mDNSResponder"
 alias d.="desk ."
 
+
 # Personal functions
 
 # Git Prompt Logic
