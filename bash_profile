@@ -75,4 +75,5 @@ export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 # export DOCKER_HOST=tcp://localhost:4245
+export GPG_TTY=$(tty)
 
