@@ -110,7 +110,7 @@
 [user]
 	name = Stephen Way
 	email = scway@thenavisway.com
-  signingkey = E155C5F9A2781C6C
+  # signingkey = E155C5F9A2781C6C
 [github]
 	user = stephenway
 [url "git@gitlab.buehner-fry.com:"]
@@ -132,5 +132,5 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 [commit]
-  gpgsign = true
 	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
+  # gpgsign = true
