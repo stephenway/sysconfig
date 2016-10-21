@@ -14,7 +14,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.

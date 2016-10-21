@@ -110,7 +110,7 @@ alias nl="npm list --depth=0 2>/dev/null"
 
 # Updating
 alias um="sudo softwareupdate -i -a"
-alias ub="brew update && brew upgrade --all && brew cleanup && brew doctor"
+alias ub="brew update && brew upgrade && brew cleanup && brew doctor"
 alias uv="vim +PlugUpdate +qall"
 alias un="sudo npm update -g"
 alias up="ub && uv && un && reset"
