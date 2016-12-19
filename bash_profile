@@ -17,25 +17,21 @@ pathprepend() {
   done
 }
 
-if [ -d "/usr/local/sbin" ] ; then
-  pathprepend /usr/local/sbin
-fi
+sourcefile() {
+  for ARG in "$@"
+	do
+	  if [ -f "$ARG" ] ; then
+		  source $ARG
+		fi
+	done
+}
 
-if [ -d "$HOME/bin" ] ; then
-  pathprepend $HOME/bin
-fi
-
-if [ -f "$HOME/.inputrc" ] ; then
-  source $HOME/.inputrc
-fi
-
-if [ -f "$HOME/.bashrc" ] ; then
-  source $HOME/.bashrc
-fi
-
-if [ -f "$HOME/.localrc" ] ; then
-  source $HOME/.localrc
-fi
+pathprepend /usr/local/sbin
+pathprepend $HOME/bin
+pathprepend `yarn global bin`
+sourcefile $HOME/.inputrc
+sourcefile $HOME/.bashrc
+sourcefile $HOME/.localrc
 
 # SSH
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
