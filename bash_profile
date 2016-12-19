@@ -17,10 +17,6 @@ pathprepend() {
   done
 }
 
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-  . $(brew --prefix)/share/bash-completion/bash_completion
-fi
-
 if [ -d "/usr/local/sbin" ] ; then
   pathprepend /usr/local/sbin
 fi
@@ -41,11 +37,6 @@ if [ -f "$HOME/.localrc" ] ; then
   source $HOME/.localrc
 fi
 
-# Desk
-if [ -f "/usr/bin/local/desk" ]; then
-  source /usr/bin/local/desk
-fi
-
 # SSH
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
@@ -54,9 +45,6 @@ eval "$(hub alias -s)"
 
 # Git Completion
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
   if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
     source "$HOME/bash_completion.d/git-flow-completion.bash"
   fi

@@ -70,6 +70,7 @@ brew install tig
 brew install tree
 brew install tmux
 brew install webkit2png
+brew install yarn
 brew install zopfli
 
 # Install Cask and Applications

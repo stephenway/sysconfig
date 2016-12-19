@@ -1,38 +1,30 @@
 #!/usr/bin/env bash
 
-# Ask for the administrator password upfront.
-sudo -v
+set -e
 
-sudo npm i -g a11y
-sudo npm i -g autoprefixer
-sudo npm i -g babel
-sudo npm i -g babel-eslint
-sudo npm i -g bower
-sudo npm i -g browserify
-sudo npm i -g browser-sync
-sudo npm i -g casperjs
-sudo npm i -g cli-github
-sudo npm i -g component
-sudo npm i -g diff-so-fancy
-sudo npm i -g eslint
-sudo npm i -g eslint-plugin-react
-sudo npm i -g ghcal
-sudo npm i -g gulp
-sudo npm i -g harp
-sudo npm i -g imageoptim-cli
-sudo npm i -g jsonlint
-sudo npm i -g nativefier
-sudo npm i -g pakmanager
-sudo npm i -g perfbudget
-sudo npm i -g phantomcss
-sudo npm i -g phantomjs
-sudo npm i -g postcss-cli
-sudo npm i -g psi
-sudo npm i -g slimerjs
-sudo npm i -g speed-test
-sudo npm i -g svgo
-sudo npm i -g updtr
-sudo npm i -g vtop
-sudo npm i -g webpack
-sudo npm i -g webpack-dev-server
-sudo npm i -g yo
+yarn global add a11y
+yarn global add autoprefixer
+yarn global add babel
+yarn global add babel-eslint
+yarn global add bower
+yarn global add browserify
+yarn global add browser-sync
+yarn global add cli-github
+yarn global add diff-so-fancy
+yarn global add eslint
+yarn global add eslint-plugin-react
+yarn global add ghcal
+yarn global add gulp
+yarn global add harp
+yarn global add imageoptim-cli
+yarn global add jsonlint
+yarn global add nativefier
+yarn global add pakmanager
+yarn global add perfbudget
+yarn global add postcss-cli
+yarn global add psi
+yarn global add slimerjs
+yarn global add speed-test
+yarn global add svgo
+yarn global add updtr
+yarn global add vtop
