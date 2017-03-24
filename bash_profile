@@ -27,8 +27,9 @@ sourcefile() {
 }
 
 pathprepend /usr/local/sbin
+pathprepend /opt/pkg/bin
 pathprepend $HOME/bin
-pathprepend `yarn global bin`
+# pathprepend `yarn global bin`
 sourcefile $HOME/.inputrc
 sourcefile $HOME/.bashrc
 sourcefile $HOME/.localrc
@@ -37,7 +38,7 @@ sourcefile $HOME/.localrc
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 # Hub
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 # Git Completion
 if [[ "$OSTYPE" == "darwin"* ]]; then

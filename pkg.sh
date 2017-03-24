@@ -27,14 +27,13 @@ sudo pkgin -y install bash-completion
 sudo pkgin -y install wget
 
 # Install more recent versions of some OS X tools.
-sudo pkgin -y install vim --override-system-vi
-sudo pkgin -y install homesudo pkgin -y/dupes/grep
-sudo pkgin -y install homesudo pkgin -y/dupes/openssh
+sudo pkgin -y install vim
 
 # Install other useful binaries.
 sudo pkgin -y install curl
 sudo pkgin -y install git
 sudo pkgin -y install imagemagick
+sudo pkgin -y install nodejs
 sudo pkgin -y install optipng
 sudo pkgin -y install p7zip
 sudo pkgin -y install speedtest-cli
