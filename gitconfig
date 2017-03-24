@@ -74,6 +74,8 @@
 	release = flow release
 	hotfix = flow hotfix
 	support = flow support
+	#Experimental
+	pr = "!f() {git checkout pr/$1; }; f"
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=1,5 -R
@@ -134,3 +136,5 @@
 [commit]
 	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
   # gpgsign = true
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
