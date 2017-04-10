@@ -50,7 +50,7 @@ fi
 # Personal environment variables
 
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\[\e[0;32m\]\w\[\033[35m\]:$(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
+export PS1='\[\e[0;32m\]\w\[\033[35m\] $(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
 export EDITOR=vim;
 export BROWSER=open;
 export COMMAND_MODE=unix2003;
