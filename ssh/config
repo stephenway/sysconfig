@@ -9,23 +9,8 @@ Host *
 # Personal
 # ========================
 
-Host blog
-  HostName 52.4.200.64
-  User ubuntu
-  IdentityFile "~/.ssh/private-server-ghost.pem"
-
-Host dashboard
-  Hostname 66.220.103.246
-  Port 2236
-  User pi
-
 Host desktop
   Hostname 66.220.103.246
-  Port 2223
-  User stephen
-
-Host laptop
-  Hostname laptop.local
   Port 2223
   User stephen
 
@@ -43,11 +28,3 @@ Host gitlab
   RSAAuthentication yes
   IdentityFile ~/.ssh/id_rsa
   IdentitiesOnly yes
-
-# Clients
-# ========================
-
-Host crawmers
-  Hostname 50.116.7.33
-  User root
-
