@@ -29,18 +29,14 @@ sourcefile() {
 pathprepend /usr/local/sbin
 pathprepend /opt/pkg/bin
 pathprepend $HOME/bin
-# pathprepend `yarn global bin`
 sourcefile $HOME/.inputrc
 sourcefile $HOME/.bashrc
 sourcefile $HOME/.localrc
 
-# SSH
+## SSH
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Hub
-# eval "$(hub alias -s)"
-
-# Git Completion
+## Git Completion
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
     source "$HOME/bash_completion.d/git-flow-completion.bash"
@@ -49,16 +45,25 @@ fi
 
 # Personal environment variables
 
+## Bash
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\[\e[0;32m\]\w\[\033[35m\] $(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
-export EDITOR=vim;
-export BROWSER=open;
 export COMMAND_MODE=unix2003;
-export NODE_ENV=development
-export NODE_PATH="/usr/local/lib/node_modules";
+export BROWSER=open;
+
+## Vim
+export EDITOR=vim;
 export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
-# export DOCKER_HOST=tcp://localhost:4245
+
+## Node
+export NODE_ENV=development
+export NODE_PATH="/usr/local/lib/node_modules";
+
+## GPG Keys
 export GPG_TTY=$(tty)
+
+## Autojump
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
