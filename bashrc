@@ -32,25 +32,11 @@ alias p="cd $HOME/projects"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
-# Fasd
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#   eval "$(fasd --init auto)"
-#   alias a='fasd -a'        # any
-#   alias s='fasd -si'       # show / search / select
-#   alias d='fasd -d'        # directory
-#   alias f='fasd -f'        # file
-#   alias sd='fasd -sid'     # interactive directory selection
-#   alias sf='fasd -sif'     # interactive file selection
-#   alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-#   alias zz='fasd_cd -d -i' # cd with interactive selection
-# fi
-
 # Gulp
 alias g="gulp"
 alias gbw="gulp build-watch"
 
 # Git/Hub
-# alias git="hub"
 alias gss="git status"
 alias gs="git status -s"
 alias gsa="git-multi-status"
@@ -110,12 +96,11 @@ alias nl="npm list --depth=0 2>/dev/null"
 
 # Updating
 alias um="sudo softwareupdate -i -a"
-alias ub="brew update && brew upgrade && brew cleanup && brew doctor"
+alias ub="sudo pkgin update && sudo pkgin upgrade && sudo pkgin fullupgrade"
 alias uv="vim +PlugUpdate +qall"
 alias un="sudo npm update -g"
 alias up="ub && uv && un && reset"
 alias nu="npm cache clean && npm update"
-alias bu="bower cache clean && bower update"
 
 # Clojure
 alias fw="rlwrap lein figwheel"
