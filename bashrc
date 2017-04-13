@@ -15,6 +15,7 @@ fi
 
 # Enable sudo in aliases
 alias sudo="sudo "
+alias fuck='eval "sudo $(fc -ln -1)"'
 
 # Reload Shell
 alias reload="exec $SHELL -l"
