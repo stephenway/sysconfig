@@ -36,12 +36,9 @@ sourcefile $HOME/.localrc
 ## SSH
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-## Git Completion
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -f "$HOME/bash_completion.d/git-flow-completion.bash" ]; then
-    source "$HOME/bash_completion.d/git-flow-completion.bash"
-  fi
-fi
+## Autojump
+[[ -s "/opt/pkg/share/autojump/autojump.sh" ]] && . /opt/pkg/share/autojump/autojump.sh
+[[ -s "/opt/pkg/share/autojump/autojump.bash" ]] && . /opt/pkg/share/autojump/autojump.bash
 
 # Personal environment variables
 
@@ -50,6 +47,8 @@ GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\[\e[0;32m\]\w\[\033[35m\] $(parse_git_branch)\[\e[m\] λ\[\033[00m\] '
 export COMMAND_MODE=unix2003;
 export BROWSER=open;
+export PKGIN_PREFIX="/opt/pkg"
+export ZOPFLI="/opt/pkg/bin/zopfli"
 
 ## Vim
 export EDITOR=vim;
@@ -63,7 +62,4 @@ export NODE_PATH="/usr/local/lib/node_modules";
 
 ## GPG Keys
 export GPG_TTY=$(tty)
-
-## Autojump
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
