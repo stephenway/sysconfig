@@ -47,6 +47,9 @@ syntax enable
 set background=dark
 colorscheme base16-default
 
+" Set background to transparent for hyper
+hi Normal guibg=NONE ctermbg=NONE
+
 " setup basic encoding
 if !has('nvim')
         set encoding=utf-8
