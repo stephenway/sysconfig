@@ -28,3 +28,7 @@ Host gitlab
   RSAAuthentication yes
   IdentityFile ~/.ssh/id_rsa
   IdentitiesOnly yes
+
+Host marketing
+  Hostname hil-vs-mweb01
+  User scway
