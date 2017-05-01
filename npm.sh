@@ -28,3 +28,4 @@ yarn global add speed-test
 yarn global add svgo
 yarn global add updtr
 yarn global add vtop
+yarn global add web-ext

@@ -21,7 +21,7 @@
 # Dependencies:
 #
 #   - ImageMagick. If you're on a Mac, run:
-#       brew install imagemagick
+#       sudo pkgin install imagemagick
 #   - wget
 #   - cloudapp: https://github.com/holman/dotfiles/blob/master/bin/cloudapp
 #   - gifme:    https://github.com/holman/gifme

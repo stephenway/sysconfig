@@ -41,6 +41,7 @@ sudo pkgin -y install the_silver_searcher
 sudo pkgin -y install tig
 sudo pkgin -y install tree
 sudo pkgin -y install tmux
+sudo pkgin -y install jq
 sudo pkgin -y install zopfli
 
 # Remove outdated versions from the cellar.
