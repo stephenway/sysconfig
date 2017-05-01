@@ -29,6 +29,7 @@ sourcefile() {
 pathprepend /usr/local/sbin
 pathprepend /opt/pkg/bin
 pathprepend $HOME/bin
+pathprepend $HOME/.yarn/bin
 sourcefile $HOME/.inputrc
 sourcefile $HOME/.bashrc
 sourcefile $HOME/.localrc
@@ -63,3 +64,4 @@ export NODE_PATH="/usr/local/lib/node_modules";
 ## GPG Keys
 export GPG_TTY=$(tty)
 
+eval $(/usr/libexec/path_helper -s)
