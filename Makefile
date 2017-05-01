@@ -66,7 +66,7 @@ $(directories):
 	mkdir -p ~/.$@
 
 install: $(symlinks)
-	$(CONFIG)/brew.sh
+	$(CONFIG)/pkg.sh
 	$(CONFIG)/npm.sh
 
 $(symlinks):
@@ -84,7 +84,3 @@ update:
 nvim:
 	ln -s ~/.vim ~/.config/nvim
 	ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-iterm:
-	open ./iterm-atelier-ocean.itermcolors
-
