@@ -41,6 +41,10 @@ sourcefile $HOME/.localrc
 [[ -s "/opt/pkg/share/autojump/autojump.sh" ]] && . /opt/pkg/share/autojump/autojump.sh
 [[ -s "/opt/pkg/share/autojump/autojump.bash" ]] && . /opt/pkg/share/autojump/autojump.bash
 
+## Git Flow Completion
+source $HOME/.sysconfig/bash_completion.d/git-completion.bash
+source $HOME/.sysconfig/bash_completion.d/git-flow-completion.bash
+
 # Personal environment variables
 
 ## Bash
@@ -49,7 +53,7 @@ export PS1='\[\e[0;32m\]\w\[\033[35m\] $(parse_git_branch)\[\e[m\]\nλ\[\033[00m
 export COMMAND_MODE=unix2003;
 export BROWSER=open;
 export PKGIN_PREFIX="/opt/pkg"
-export ZOPFLI="/opt/pkg/bin/zopfli"
+export ZOPFLI="$PKGIN_PREFIX/bin/zopfli"
 
 ## Vim
 export EDITOR=vim;

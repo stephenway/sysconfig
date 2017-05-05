@@ -69,6 +69,7 @@ alias gcount="git shortlog -sn"
 alias gcp="git cherry-pick"
 alias gexport="git archive --format zip --output"
 alias bub="GITHUB_HOST=bitbucket.com git"
+alias flow="_git_flow"
 
 # Vim
 alias v="f -e vim" # quick opening files with vim
@@ -118,6 +119,28 @@ alias d.="desk ."
 
 
 # Personal functions
+
+shellopt() {
+  for ARG in "$@"
+  do
+		shopt -s "$ARG" 2>/dev/null
+  done
+}
+
+# Append to history file, don't overwrite it
+shopt -s histappend
+
+# No need to type cd (works for .. but not -, although alias -- -='cd -' fixes it)
+shellopt autocd
+
+# Use extra globbing features.
+shellopt extglob
+
+# Include dotfiles when globbing
+shellopt dotglob
+
+# Case insensitive globbing
+shellopt nocaseglob
 
 # Git Prompt Logic
 function parse_git_dirty() {
