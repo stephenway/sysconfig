@@ -27,6 +27,7 @@ sudo yarn global add psi
 sudo yarn global add slimerjs
 sudo yarn global add speed-test
 sudo yarn global add svgo
+sudo yarn global add tern
 sudo yarn global add updtr
 sudo yarn global add vtop
 sudo yarn global add web-ext
