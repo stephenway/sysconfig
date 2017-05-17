@@ -22,8 +22,6 @@ sudo yarn global add psi
 # Package Management
 sudo yarn global add bower
 sudo yarn global add pakmanagr
-sudo yarn global add david
-sudo yarn global add updtr
 sudo yarn global add wipe-modules
 
 
