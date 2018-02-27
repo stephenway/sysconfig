@@ -36,7 +36,9 @@
 ehthumbs.db
 Thumbs.db
 
-# Vim generated files #
+# Editor generated files #
 #######################
 *.swp
 *.swo
+.vscode
+*.code-workspace

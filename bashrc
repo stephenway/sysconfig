@@ -31,12 +31,9 @@ alias ls="gls"
 alias la="ls -Al"
 alias c="cd $HOME/code"
 alias p="cd $HOME/projects"
+alias sys="cd $HOME/.sysconfig"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
-
-# Gulp
-alias g="gulp"
-alias gbw="gulp build-watch"
 
 # Git/Hub
 alias gss="git status"
@@ -84,6 +81,7 @@ alias ts="tmux attach -d -t"
 alias tl="tmux ls"
 
 # NPM
+alias npm=prioritize-yarn
 alias ni="npm install"
 alias nis="npm install --save"
 alias nid="npm install --save-dev"

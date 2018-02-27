@@ -68,14 +68,10 @@
 	personal = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
 	# Emoji commits
 	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
-	# Git-flow
-	finit = flow init -d
-	feature = flow feature
-	release = flow release
-	hotfix = flow hotfix
-	support = flow support
-	#Experimental
+	# Experimental
 	pr = "!f() {git checkout pr/$1; }; f"
+  # Flow
+  feature = "!feature() { git checkout -b feature/$@; }; feature"
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=1,5 -R

@@ -3,63 +3,52 @@
 set -e
 
 # System Utilities
-sudo yarn global add ghcal
-sudo yarn global add cli-github
-sudo yarn global add nativefier
-sudo yarn global add diff-so-fancy
-sudo yarn global add speed-test
-sudo yarn global add vtop
+sudo npm install -g ghcal
+sudo npm install -g cli-github
+sudo npm install -g nativefier
+sudo npm install -g diff-so-fancy
+sudo npm install -g speed-test
+sudo npm install -g vtop
 
 
 # Front-end
-sudo yarn global add a11y
-sudo yarn global add browser-sync
-sudo yarn global add gulp
-sudo yarn global add perfbudget
-sudo yarn global add psi
+sudo npm install -g a11y
+sudo npm install -g perfbudget
+sudo npm install -g psi
 
 
 # Package Management
-sudo yarn global add bower
-sudo yarn global add pakmanager
-sudo yarn global add wipe-modules
+sudo npm install -g bower
+sudo npm install -g pakmanager
+sudo npm install -g wipe-modules
+sudo npm install -g install-peerdeps
+sudo npm install -g prioritize-yarn
+sudo npm install -g lerna
+sudo npm install -g npx
+sudo npm install -g depcheck
 
 
-# CSS
-sudo yarn global add autoprefixer
-sudo yarn global add postcss-cli
-
-
-# Javascript
-sudo yarn global add browserify
-sudo yarn global add harp
-
-
-# React
-sudo yarn global add babel
-# https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bframeworks/react
-# Auto-completion and documentation
-sudo yarn global add tern
 # Syntax Checking
-sudo yarn global add eslint
-sudo yarn global add babel-eslint
-sudo yarn global add eslint-plugin-react
+sudo npm install -g eslint
+sudo npm install -g babel-eslint
+sudo npm install -g eslint-plugin-react
 # Auto-code formatting
-sudo yarn global add js-beautify
+sudo npm install -g js-beautify
 
 
 # Image Optimization
-sudo yarn global add imageoptim-cli
-sudo yarn global add svgo
+sudo npm install -g imageoptim-cli
+sudo npm install -g svgo
 
 
 # Syntax Check
-sudo yarn global add jsonlint
+sudo npm install -g jsonlint
+sudo npm install -g commitizen
 
 
 # Regression Testing
-sudo yarn global add slimerjs
+sudo npm install -g slimerjs
 
 
 # Web Extensions
-sudo yarn global add web-ext
+sudo npm install -g web-ext
