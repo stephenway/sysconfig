@@ -49,11 +49,16 @@ source $HOME/.sysconfig/bash_completion.d/git-flow-completion.bash
 
 ## Bash
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\[\e[0;32m\]\w\[\033[35m\] $(parse_git_branch)\[\e[m\]\nλ\[\033[00m\] '
 export COMMAND_MODE=unix2003;
 export BROWSER=open;
 export PKGIN_PREFIX="/opt/pkg"
 export ZOPFLI="$PKGIN_PREFIX/bin/zopfli"
+
+## Bash Git Prompt
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 ## Vim
 export EDITOR=vim;
