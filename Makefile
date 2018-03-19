@@ -66,7 +66,7 @@ $(directories):
 	mkdir -p ~/.$@
 
 install: $(symlinks)
-	$(CONFIG)/pkg.sh
+	$(CONFIG)/brew.sh
 	$(CONFIG)/npm.sh
 
 $(symlinks):
