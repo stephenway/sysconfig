@@ -42,6 +42,7 @@ brew install tig
 brew install tree
 brew install tmux
 brew install jq
+brew install bash-git-prompt
 
 # Install image libraries
 brew install imagemagick
