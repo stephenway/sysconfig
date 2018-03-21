@@ -9,6 +9,7 @@ sudo npm install -g nativefier
 sudo npm install -g diff-so-fancy
 sudo npm install -g speed-test
 sudo npm install -g vtop
+sudo npm install -g fkill-cli
 
 
 # Front-end
