@@ -14,65 +14,45 @@
 	changed = blue
 	untracked = cyan
 [alias]
-	amend = commit -a --amend
-	br = branch
-	# show all branches, even across remotes
-	branches = branch -a --color -v
-	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"<Paste>
-	co = checkout
-	cob = checkout -b
-	cm = !git add -A && git commit -m
-	ctags = !.git/hooks/ctags
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  
+	# See status of files and branches
+  s = !"git branch-status && git status -s"
+
 	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Diff
-	df = "!git diff --color $@ | diff-so-fancy"
+
+	# Pull in remote changes for the current repository and all its submodules
+	p = !"git pull; git submodule foreach git pull origin master"
+
+	# Clone a repository including all submodules
+	c = clone --recursive
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+	# Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
 	# Remove branches that have been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-	# Get short SHA-1 for object
-	hash = rev-parse --short HEAD
-	lc = log ORIG_HEAD.. --stat --no-merges
-	# just for fun
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	ls = ls-files
-	mybranches = "!f() { if test $# = 0 ; then set -- refs/remotes ; fi ; git for-each-ref --format='%(authordate:relative)\t%(refname:short)\t%(authoremail)' --sort=authordate \"$@\" | sed -ne \"s/\t<$(git config user.email)>//p\" | column -s '\t' -t ; } ; f"
-	# Find FIXME, TODO, etc, optimized by @x3ro https://gist.github.com/3908985
-	n = !"f() { git ls-files $1 | xargs notes | awk -F: '{ print $1,$2; print $3,$4; print $5}' | grcat conf.notes | less -r;  }; f"
-	# Add multiple files by pattern \.js
-	am = !"f() { git ls-files . | grep '$1$' | xargs git add }; f"
-	pullm = !git pull origin master
-	pushm = !git push origin master
-	rb = rebase
-	rbc = rebase --continue
-	# Interactive rebase with the selected number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"tags = tag -l
-	# track a remote branch
-	track = checkout -t
-	save = !git add -A && git commit -m 'SAVEPOINT'
-	st = status
-	# update all submodules
-	subs = submodule foreach git pull origin master
-	# clean up fully merged branches
-	sweep = !git-sweep
-	undo = reset HEAD~1 --mixed
-	# list only untracked files
-	untracked = ls-files --others --exclude-standard
-	# remove a file from the index
-	unstage = reset HEAD --
-	up = "!git remote update -p; git merge --ff-only @{u}"
-	wdiff = diff --color-words
-	wip = "!$EDITOR $(git ls-files -m)"
-	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-	mypulls = browse -- pulls/stephenway
+
+	# Mark project as a personal project
 	personal = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
+
 	# Emoji commits
 	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
+
 	# Experimental
 	pr = "!f() {git checkout pr/$1; }; f"
+
   # Flow
   feature = "!feature() { git checkout -b feature/$@; }; feature"
+
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=1,5 -R

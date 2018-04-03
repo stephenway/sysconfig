@@ -39,7 +39,6 @@ alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # Git/Hub
 alias g="git"
-alias gs="git status -s && git branch-status"
 alias ga="git add"
 alias gA="git add -A"
 alias gc="git commit -v"
@@ -48,7 +47,6 @@ alias gd="git diff"
 alias gco="git checkout"
 alias gp="git push -u"
 alias gP="git pull --rebase"
-alias gl="git lol"
 alias gcount="git shortlog -sn"
 alias gexport="git archive --format zip --output"
 alias flow="_git_flow"
