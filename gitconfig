@@ -38,6 +38,9 @@
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
+  # Flow
+  ft = "!f() { git checkout -b feature/$@; }; f"
+
 	# Remove branches that have been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
@@ -46,10 +49,6 @@
 
 	# Emoji commits
 	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
-
-  # Flow
-  feature = "!feature() { git checkout -b feature/$@; }; feature"
-	mypulls = browse -- pulls/stephenway
 
 [core]
 	excludesfile = ~/.gitignore_global
