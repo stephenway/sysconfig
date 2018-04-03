@@ -74,3 +74,6 @@ export NODE_PATH="/usr/local/lib/node_modules";
 export GPG_TTY=$(tty)
 
 eval $(/usr/libexec/path_helper -s)
+
+## Clojure
+LEIN_SNAPSHOTS_IN_RELEASE=false
