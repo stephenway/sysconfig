@@ -20,15 +20,17 @@ alias fuck='eval "sudo $(fc -ln -1)"'
 # Reload Shell
 alias reload="exec $SHELL -l"
 
-# Directories
+# Navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd $HOME"
+alias ~="cd ~"
 alias -- -="cd -"
 alias ls="gls"
 alias la="ls -Al"
+
+# Directories
 alias c="cd $HOME/code"
 alias p="cd $HOME/projects"
 alias sys="cd $HOME/.sysconfig"
@@ -36,37 +38,19 @@ alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
 # Git/Hub
-alias gss="git status"
-alias gs="git status -s"
-alias gsa="git-multi-status"
+alias g="git"
+alias gs="git status -s && git branch-status"
 alias ga="git add"
 alias gA="git add -A"
-alias gaa="git add ."
-alias gcl="git clone"
-alias gc="git commit -S -v"
-alias gca="git commit -S -v -a"
+alias gc="git commit -v"
 alias gb="git branches"
-alias gba="git branch -a"
-alias gdel="git branch -D"
 alias gd="git diff"
-alias gdd="git diff --cached"
-alias gdw="git diff --color-words"
-alias gdt="git difftool"
 alias gco="git checkout"
-alias gup="git fetch && git rebase"
-alias gp="git push"
-alias gpa="git push --all"
-alias gpo="git push -u origin"
-alias gpp="git pull --rebase && git push"
+alias gp="git push -u"
 alias gP="git pull --rebase"
 alias gl="git lol"
-alias gt="git tag"
-alias gm="git merge"
-alias gmu="git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 alias gcount="git shortlog -sn"
-alias gcp="git cherry-pick"
 alias gexport="git archive --format zip --output"
-alias bub="GITHUB_HOST=bitbucket.com git"
 alias flow="_git_flow"
 
 # Vim
@@ -112,6 +96,7 @@ alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
 # alias docker-up="docker-machine start default"
 
 # Misc
+export ENV_IP="$(ipconfig getifaddr en0)"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias flush="sudo killall -HUP mDNSResponder"
 alias d.="desk ."
@@ -140,3 +125,7 @@ shellopt dotglob
 
 # Case insensitive globbing
 shellopt nocaseglob
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
