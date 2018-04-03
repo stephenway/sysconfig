@@ -47,11 +47,9 @@
 	# Emoji commits
 	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
 
-	# Experimental
-	pr = "!f() {git checkout pr/$1; }; f"
-
   # Flow
   feature = "!feature() { git checkout -b feature/$@; }; feature"
+	mypulls = browse -- pulls/stephenway
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -110,8 +108,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
-[commit]
-	template = /Users/Stephen/projects/team/jira-git-automation/GIT_TEMPLATE
   # gpgsign = true
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
