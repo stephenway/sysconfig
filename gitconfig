@@ -19,8 +19,6 @@
 	# show all branches, even across remotes
 	branches = branch -a --color -v
 	bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"<Paste>
-	# remove all local branches included in the current branch
-	cleanup = !sh -c 'git branch --merged | grep -E "^[^*]" --exclude "^\\s*master" | xargs -n1 git branch -d'
 	co = checkout
 	cob = checkout -b
 	cm = !git add -A && git commit -m
