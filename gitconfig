@@ -14,6 +14,9 @@
 	changed = blue
 	untracked = cyan
 [alias]
+  # List all git aliases
+  la = config --get-regexp alias
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
   
@@ -29,11 +32,14 @@
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
 
+	# Push with origin
+	pu = push -u
+
 	# Clone a repository including all submodules
 	c = clone --recursive
 
 	# Commit all changes
-	ca = !git add -A && git commit -av
+	ca = "!git add -A && git commit -av"
 
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -45,10 +51,16 @@
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# Mark project as a personal project
-	personal = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
+	mp = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
 
 	# Emoji commits
-	initial = !bash -c 'git commit -m \":sunrise: Initial commit\"'
+	i = !bash -c 'git commit -m \":sunrise: Initial commit\"'
+
+	# Count lines changed (Leaderboard)
+	lb = shortlog -sn
+
+  # Export git repo to a zip file
+	ex = archive --format zip --output
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -57,6 +69,8 @@
 	templatedir = ~/.git-templates
 [push]
 	default = current
+	# Push annotated tags when pushing branches
+	followTags = true
 [hub]
 	protocol = https
 [difftool]

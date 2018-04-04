@@ -37,19 +37,8 @@ alias sys="cd $HOME/.sysconfig"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
 
-# Git/Hub
+# Git
 alias g="git"
-alias ga="git add"
-alias gA="git add -A"
-alias gc="git commit -v"
-alias gb="git branches"
-alias gd="git diff"
-alias gco="git checkout"
-alias gp="git push -u"
-alias gP="git pull --rebase"
-alias gcount="git shortlog -sn"
-alias gexport="git archive --format zip --output"
-alias flow="_git_flow"
 
 # Vim
 alias v="f -e vim" # quick opening files with vim
