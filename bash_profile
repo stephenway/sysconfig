@@ -44,6 +44,7 @@ sourcefile $HOME/.localrc
 ## Git Flow Completion
 source $HOME/.sysconfig/bash_completion.d/git-completion.bash
 source $HOME/.sysconfig/bash_completion.d/git-flow-completion.bash
+export GH_LOGIN=stephenway
 
 # Personal environment variables
 
