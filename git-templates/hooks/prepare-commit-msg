@@ -2,7 +2,7 @@
 # Put the branch name into the template.
 #
 if [ -z "$BRANCHES_TO_SKIP" ]; then
-    BRANCHES_TO_SKIP=(master develop test)
+    BRANCHES_TO_SKIP=(master develop dev test)
 fi
 
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
