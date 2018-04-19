@@ -36,7 +36,7 @@
   ft = "!f() { git checkout -b feature/$@; }; f"
 
 	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	sw = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# Emoji commits
 	i = !bash -c 'git commit -m \":sunrise: Initial commit\"'
