@@ -62,6 +62,9 @@
   # Rebase on a remote branch
 	rb = "!git pull --rebase origin \"$1\""
 
+  # Continue rebase
+  rc = "!git rebase --continue"
+
 	# See status of files and branches
   s = !"git branch-status; git status -s"
 
