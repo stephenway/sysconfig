@@ -46,25 +46,55 @@ alias v="f -e vim" # quick opening files with vim
 # alias nim="nvim"
 
 # Tmux
-alias t="tmux"
-alias ta="tmux attach -d"
-alias ts="tmux attach -d -t"
-alias tl="tmux ls"
+
+t() {
+  if [[ $1 == "a" ]]; then
+    command tmux attach -d "$2"
+  elif [[ $1 == "s" ]]; then
+    command tmux attach -d -t "$2"
+  elif [[ $@ == "l" ]]; then
+    command tmux ls
+  else
+    command tmux "$@"
+  fi
+}
 
 # NPM
+
+# Use yarn when yarn.lock is detected
 alias npm=prioritize-yarn
-alias ni="npm install"
-alias nis="npm install --save"
-alias nid="npm install --save-dev"
-alias nig="npm install --global"
-alias nt="npm test"
-alias nit="npm install && npm test"
-alias nk="npm link"
-alias nr="npm run"
-alias nf="npm cache clean && rm -rf node_modules && npm install"
-alias nu="npm clean cache; npm update; npm outdated"
-alias ng="npm list -g --depth=0 2>/dev/null"
-alias nl="npm list --depth=0 2>/dev/null"
+
+n() {
+  if [[ $1 == "i" ]]; then
+    command npm install "$2"
+  elif [[ $1 == "s" ]]; then
+    command npm install --save "$2"
+  elif [[ $1 == "d" ]]; then
+    command npm install --save-dev "$2"
+  elif [[ $1 == "g" ]]; then
+    command npm install --global "$2"
+  elif [[ $1 == "r" ]]; then
+    command npm run "$2"
+  elif [[ $1 == "rs" ]]; then
+    command npm run start"$2"
+  elif [[ $@ == "t" ]]; then
+    command npm test
+  elif [[ $@ == "l" ]]; then
+    command npm run lint
+  elif [[ $1 == "o" ]]; then
+    command npm outdated "$2"
+  elif [[ $@ == "c" ]]; then
+    command npm cache clean && rm -rf node_modules && npm install
+  elif [[ $@ == "u" ]]; then
+    command npm cache clean && npm update && npm outdated
+  elif [[ $@ == "ll" ]]; then
+    command npm list --depth=0 2>/dev/null
+  elif [[ $@ == "lg" ]]; then
+    command npm list -g --depth=0 2>/dev/null
+  else
+    command npm "$@"
+  fi
+}
 
 # Updating
 alias um="sudo softwareupdate -i -a"
@@ -102,16 +132,16 @@ shellopt() {
 shopt -s histappend
 
 # No need to type cd (works for .. but not -, although alias -- -='cd -' fixes it)
-shellopt autocd
-
-# Use extra globbing features.
-shellopt extglob
+shopt -s autocd
 
 # Include dotfiles when globbing
-shellopt dotglob
+shopt -s dotglob
+
+# Use extra globbing features.
+shopt -s extglob
 
 # Case insensitive globbing
-shellopt nocaseglob
+shopt -s nocaseglob
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
