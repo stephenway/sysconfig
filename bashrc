@@ -85,9 +85,9 @@ n() {
   elif [[ $1 == "o" ]]; then
     command npm outdated "$2"
   elif [[ $@ == "c" ]]; then
-    command npm cache clean && rm -rf node_modules && npm install
+    command rm -rf node_modules && npm install
   elif [[ $@ == "u" ]]; then
-    command npm cache clean && npm update && npm outdated
+    command npm update && npm outdated
   elif [[ $@ == "ll" ]]; then
     command npm list --depth=0 2>/dev/null
   elif [[ $@ == "lg" ]]; then

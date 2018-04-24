@@ -48,6 +48,7 @@
   rc = "!git rebase --continue"
 	# See status of files and branches
   s = !"git branch-status; git status -s"
+	mp = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=1,5 -R
@@ -90,3 +91,8 @@
   # gpgsign = true
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[user]
+	name = Stephen Way
+	email = scway@thenavisway.com
+[github]
+	user = stephenway
