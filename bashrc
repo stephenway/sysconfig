@@ -27,7 +27,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
-alias ls="gls"
 alias la="ls -Al"
 
 # Directories
