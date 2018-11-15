@@ -25,7 +25,7 @@ Host server
 Host gitlab
   HostName gitlab.buehner-fry.com
   User SCWay
-  RSAAuthentication yes
+  PubkeyAuthentication yes
   IdentityFile ~/.ssh/id_rsa
   IdentitiesOnly yes
 

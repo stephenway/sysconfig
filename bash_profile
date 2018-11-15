@@ -52,8 +52,8 @@ export GH_LOGIN=stephenway
 GIT_PS1_SHOWDIRTYSTATE=true
 export COMMAND_MODE=unix2003;
 export BROWSER=open;
-export PKGIN_PREFIX="/opt/pkg"
-export ZOPFLI="$PKGIN_PREFIX/bin/zopfli"
+export PKGIN_PREFIX="/opt/pkg";
+export ZOPFLI="$PKGIN_PREFIX/bin/zopfli";
 
 ## Bash Git Prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
@@ -68,13 +68,15 @@ export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 
 ## Node
-export NODE_ENV=development
+export NODE_ENV="development";
 export NODE_PATH="/usr/local/lib/node_modules";
+
+## NVM
+## TODO: Remove this
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 ## GPG Keys
 export GPG_TTY=$(tty)
 
 eval $(/usr/libexec/path_helper -s)
-
-## Clojure
-LEIN_SNAPSHOTS_IN_RELEASE=false

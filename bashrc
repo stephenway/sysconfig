@@ -63,7 +63,7 @@ t() {
 # NPM
 
 # Use yarn when yarn.lock is detected
-alias npm=prioritize-yarn
+# alias npm=prioritize-yarn
 
 n() {
   if [[ $1 == "i" ]]; then
