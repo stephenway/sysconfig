@@ -30,6 +30,7 @@ pathprepend /usr/local/sbin
 pathprepend /opt/pkg/bin
 pathprepend $HOME/bin
 pathprepend $HOME/.yarn/bin
+pathprepend $HOME/Library/Android/sdk/platform-tools
 sourcefile $HOME/.inputrc
 sourcefile $HOME/.bashrc
 sourcefile $HOME/.localrc
