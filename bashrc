@@ -33,7 +33,6 @@ alias la="ls -Al"
 
 # Directories
 alias c="cd $HOME/code"
-alias p="cd $HOME/projects"
 alias sys="cd $HOME/.sysconfig"
 alias sysconfig="cd $HOME/.sysconfig"
 alias wget-dir='wget -r --no-parent --reject "index.html*"'
