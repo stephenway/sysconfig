@@ -27,7 +27,7 @@
   # Export git repo to a zip file
 	ex = archive --format zip --output
   # Flow
-  ft = "!f() { git checkout -b feature/$@; }; f"
+  ft = "!f() { git checkout -b feature-$@; }; f"
 	# Switch to a branch, creating it if necessary
 	sw = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	# Emoji commits
@@ -95,6 +95,6 @@
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [user]
 	name = Stephen Way
-	email = scway@thenavisway.com
+	email = sway@prometheum.com
 [github]
 	user = stephenway
