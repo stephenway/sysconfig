@@ -27,6 +27,7 @@ sourcefile() {
 }
 
 pathprepend /usr/local/sbin
+pathprepend /usr/local/opt/python@2/libexec/bin
 pathprepend /opt/pkg/bin
 pathprepend $HOME/bin
 pathprepend $HOME/.yarn/bin
@@ -72,12 +73,17 @@ export VIMRC="$HOME/.vimrc";
 export NODE_ENV="development";
 export NODE_PATH="/usr/local/lib/node_modules";
 
-## NVM
-## TODO: Remove this
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
-## GPG Keys
+## GPG Keys 
 export GPG_TTY=$(tty)
 
 eval $(/usr/libexec/path_helper -s)
+
+## NVM
+## TODO: Remove this
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+if [[ -f .nvmrc && -r .nvmrc ]]; then
+  nvm use --silent
+fi
