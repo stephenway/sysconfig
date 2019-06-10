@@ -45,7 +45,7 @@ filetype plugin indent on
 " enable syntax highlighting
 syntax enable
 set background=dark
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
 
 " Set background to transparent for hyper
 hi Normal guibg=NONE ctermbg=NONE
