@@ -16,8 +16,6 @@ symlinks = bash_profile \
 	inputrc \
 	jshintrc \
 	ssh/config \
-	tmux \
-	tmux.conf \
 	vimrc \
 
 .PHONY: $(symlinks)
@@ -32,6 +30,8 @@ COLOR = \033[32;01m
 NO_COLOR = \033[0m
 
 all: setup install
+
+link: $(symlinks)
 
 help:
 	@echo "                                                     .d888 d8b          "
