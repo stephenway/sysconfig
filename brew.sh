@@ -50,4 +50,4 @@ brew install optipng
 brew install zopfli
 
 # Remove outdated versions from the cellar.
-brew autoremove
+# brew autoremove
