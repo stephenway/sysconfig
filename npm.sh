@@ -4,7 +4,6 @@ set -e
 
 # System Utilities
 sudo npm install -g ghcal
-sudo npm install -g cli-github
 sudo npm install -g nativefier
 sudo npm install -g diff-so-fancy
 sudo npm install -g speed-test
