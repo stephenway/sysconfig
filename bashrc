@@ -42,8 +42,6 @@ alias g="git"
 
 # Vim
 alias v="f -e vim" # quick opening files with vim
-# alias vim="nvim"
-# alias nim="nvim"
 
 # Tmux
 

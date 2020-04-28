@@ -19,41 +19,43 @@
 	# Clone a repository including all submodules
 	cr = clone --recursive
 	# Show the diff between the latest commit and the current state
-	d = !"git diff-index -w --quiet HEAD -- || clear && git --no-pager diff --patch-with-stat"
+	d = !"git diff | delta"
+	dh = !"git diff-index -w --quiet HEAD -- || clear && git --no-pager diff --patch-with-stat"
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 	# Remove branches that have been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-  # Export git repo to a zip file
+	# Export git repo to a zip file
 	ex = archive --format zip --output
-  # Flow
-  ft = "!f() { git checkout -b feature-$@; }; f"
+	# Flow
+	ft = "!f() { git checkout -b feature-$@; }; f"
 	# Switch to a branch, creating it if necessary
 	sw = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	# Emoji commits
 	i = !bash -c 'git commit -m \":sunrise: Initial commit\"'
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-  # List all git aliases
-  la = config --get-regexp alias
+	# List all git aliases
+	la = config --get-regexp alias
 	# Count lines changed (Leaderboard)
 	lb = shortlog -sn
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull && git submodule foreach git pull origin master"
 	# Push with origin
 	pu = push -u
-  # Sync branch remote to quickly pull origin
-  ps = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-  # Rebase on a remote branch
+	# Sync branch remote to quickly pull origin
+	ps = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	# Rebase on a remote branch
 	rb = "!git pull --rebase origin \"$1\""
-  # Continue rebase
-  rc = "!git rebase --continue"
+	# Continue rebase
+	rc = "!git rebase --continue"
 	# See status of files and branches
-  s = !"git branch-status; git status -s"
+	s = "!git status -s -b"
+	S = "!git status"
+	bs = !"git branch-status; git status -s"
 	mp = "!git config user.email \"way.stephen@gmail.com\"; rm .git/hooks/*"
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=1,5 -R
 [init]
 	templatedir = ~/.git-templates
 [push]
@@ -90,11 +92,15 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
-  # gpgsign = true
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [user]
 	name = Stephen Way
 	email = sway@prometheum.com
+	signingkey = B99AA0099FE5E4E6
 [github]
 	user = stephenway
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
