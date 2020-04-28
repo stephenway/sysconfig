@@ -26,6 +26,8 @@ brew install bash-completion
 brew install curl
 brew install git
 brew install vim
+brew tap maralla/pack
+brew install pack
 brew install wget
 
 # Install emacs packages
@@ -49,5 +51,5 @@ brew install imagemagick
 brew install optipng
 brew install zopfli
 
-# Remove outdated versions from the cellar.
-# brew autoremove
+# Install Vim Packages
+(cd $HOME/.vim && pack install)

@@ -18,27 +18,6 @@ let mapleader = "\<space>"
 " configure plugin manager
 filetype off
 
-" install plugins
-call plug#begin('~/.vim/bundle')
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'rking/ag.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'reedes/vim-textobj-quote'
-Plug 'stephenway/vim-textobj-css', {'for': 'css' }
-Plug 'mjakl/vim-asciidoc'
-Plug 'stephenway/postcss.vim', { 'for': 'css' }
-Plug 'tpope/vim-classpath', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'luochen1990/rainbow'
-Plug 'jceb/vim-orgmode'
-call plug#end()
-
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
@@ -81,20 +60,6 @@ augroup textobj_quote
   autocmd FileType textile call textobj#quote#init()
   autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
-
-call textobj#user#plugin('css', {
-                        \   'code': {
-                        \     'pattern': ['{', '}'],
-                        \     'select-a': 'aP',
-                        \     'select-i': 'iP',
-                        \   },
-                        \ })
-
-" Evaluate Clojure buffers on load
-autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
-
-" setup clojure rainbow highlighting
-let g:rainbow_active = 1
 
 " Enable basic mouse behavior such as resizing buffers.
 if exists('$TMUX')  " Support resizing in tmux

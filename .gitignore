@@ -3,3 +3,10 @@
 fish_history
 local.fish
 *.swp
+vim/.cache
+vim/.netrwhist
+vim/plugin/__pack.vim
+vim/plugin/_pack.vim
+vim/doc/tags
+vim/pack*
+!vim/pack/.gitkeep

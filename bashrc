@@ -102,14 +102,6 @@ alias un="sudo npm update -g"
 alias up="ub && uv && un && reset"
 alias nu="npm cache clean && npm update"
 
-# Clojure
-alias fw="rlwrap lein figwheel"
-alias cg="ls -d $HOME/.m2/repository/**/**/* | grep"
-
-# Docker
-# alias docker-init="eval '$(docker-machine env default)'"
-# alias docker-up="docker-machine start default"
-
 # Misc
 export ENV_IP="$(ipconfig getifaddr en0)"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
