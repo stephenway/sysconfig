@@ -29,8 +29,9 @@ sourcefile() {
 pathprepend /usr/local/sbin
 pathprepend /usr/local/opt/python@2/libexec/bin
 pathprepend /opt/pkg/bin
-pathprepend $HOME/bin
+pathprepend $HOME/.bin
 pathprepend $HOME/.yarn/bin
+pathprepend $HOME/.config/yarn/global/node_modules/.bin
 pathprepend $HOME/Library/Android/sdk/platform-tools
 sourcefile $HOME/.inputrc
 sourcefile $HOME/.bashrc
@@ -60,6 +61,7 @@ export ZOPFLI="$PKGIN_PREFIX/bin/zopfli";
 ## Bash Git Prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  GIT_PROMPT_ONLY_IN_REPO=1
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
@@ -78,8 +80,9 @@ export GPG_TTY=$(tty)
 
 eval $(/usr/libexec/path_helper -s)
 
+export PS1="\h \$ "
+
 ## NVM
-## TODO: Remove this
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -87,3 +90,12 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -f .nvmrc && -r .nvmrc ]]; then
   nvm use --silent
 fi
+
+## iTerm Integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+function iterm2_print_user_vars() {
+  iterm2_set_user_var phpVersion $(php -v | awk '/^PHP/ { print $2 }')
+  iterm2_set_user_var rubyVersion $(ruby -v | awk '{ print $2 }')
+  iterm2_set_user_var nodeVersion $(node -v)
+}
