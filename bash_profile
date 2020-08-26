@@ -26,9 +26,6 @@ sourcefile() {
 	done
 }
 
-pathprepend /usr/local/sbin
-pathprepend /usr/local/opt/python@2/libexec/bin
-pathprepend /opt/pkg/bin
 pathprepend $HOME/.bin
 pathprepend $HOME/.yarn/bin
 pathprepend $HOME/.config/yarn/global/node_modules/.bin
@@ -45,8 +42,8 @@ sourcefile $HOME/.localrc
 [[ -s "/opt/pkg/share/autojump/autojump.bash" ]] && . /opt/pkg/share/autojump/autojump.bash
 
 ## Git Flow Completion
-source $HOME/.sysconfig/bash_completion.d/git-completion.bash
-source $HOME/.sysconfig/bash_completion.d/git-flow-completion.bash
+# source $HOME/.sysconfig/bash_completion.d/git-completion.bash
+# source $HOME/.sysconfig/bash_completion.d/git-flow-completion.bash
 export GH_LOGIN=stephenway
 
 # Personal environment variables
@@ -55,13 +52,14 @@ export GH_LOGIN=stephenway
 GIT_PS1_SHOWDIRTYSTATE=true
 export COMMAND_MODE=unix2003;
 export BROWSER=open;
-export PKGIN_PREFIX="/opt/pkg";
-export ZOPFLI="$PKGIN_PREFIX/bin/zopfli";
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 ## Bash Git Prompt
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-  GIT_PROMPT_ONLY_IN_REPO=1
+  GIT_PROMPT_ONLY_IN_REPO=0
+  GIT_PROMPT_THEME=Default_Ubuntu
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
@@ -71,10 +69,6 @@ export VIM_BINARY="/usr/local/bin/vim";
 export MVIM_BINARY="/usr/local/bin/mvim";
 export VIMRC="$HOME/.vimrc";
 
-## Node
-export NODE_ENV="development";
-export NODE_PATH="/usr/local/lib/node_modules";
-
 ## GPG Keys 
 export GPG_TTY=$(tty)
 
@@ -83,6 +77,7 @@ eval $(/usr/libexec/path_helper -s)
 export PS1="\h \$ "
 
 ## NVM
+export NODE_ENV="development";
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -90,6 +85,8 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -f .nvmrc && -r .nvmrc ]]; then
   nvm use --silent
 fi
+
+export NODE_PATH=$NODE_PATH:`npm root -g`;
 
 ## iTerm Integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

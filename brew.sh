@@ -25,6 +25,7 @@ brew install bash-completion
 # Install more recent versions of system tools
 brew install curl
 brew install git
+brew install git-delta
 brew install vim
 brew tap maralla/pack
 brew install pack

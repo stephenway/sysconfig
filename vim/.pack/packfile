@@ -11,7 +11,42 @@
 - 
   category: default
   local: false
-  name: dracula/vim
+  name: ctrlpvim/ctrlp.vim
+  opt: false
+- 
+  category: default
+  local: false
+  name: "dense-analysis/ale"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "janko/vim-test"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "jparise/vim-graphql"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "leafgarland/typescript-vim"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "peitalin/vim-jsx-typescript"
+  opt: false
+- 
+  category: default
+  local: false
+  name: pgavlin/pulumi.vim
+  opt: false
+- 
+  category: default
+  local: false
+  name: "prettier/vim-prettier"
   opt: false
 - 
   category: default
@@ -82,4 +117,14 @@
   category: default
   local: false
   name: "tpope/vim-vinegar"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "tpope/vim-vividchalk"
+  opt: false
+- 
+  category: default
+  local: false
+  name: "vim-test/vim-test"
   opt: false
